@@ -1,0 +1,94 @@
+@import "../abstracts/variables";
+
+.card {
+  background-color: $white;
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+}
+.card-content:first-child,
+.card-footer:first-child,
+.card-header:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.card-content:last-child,
+.card-footer:last-child,
+.card-header:last-child {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.card-header {
+  background-color: transparent;
+  align-items: stretch;
+  box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
+  display: flex;
+}
+.card-header-title {
+  align-items: center;
+  color: $grey-darker;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  color: #434040;
+}
+.card-header-title.is-centered {
+  justify-content: center;
+}
+.card-header-icon {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: 0 0;
+  border: none;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+.card-image {
+  display: block;
+  position: relative;
+}
+.card-image:first-child img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.card-image:last-child img {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.card-content {
+  background-color: transparent;
+  padding: 1.5rem;
+}
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid  $grey-light;
+  align-items: stretch;
+  display: flex;
+}
+.card-footer-item {
+  align-items: center;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 0.75rem;
+}
+.card-footer-item:not(:last-child) {
+  border-right: 1px solid  $grey-light;
+}
+.card .media:not(:last-child) {
+  margin-bottom: 1.5rem;
+}

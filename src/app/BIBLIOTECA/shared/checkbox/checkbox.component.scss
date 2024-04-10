@@ -1,0 +1,42 @@
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+
+    .checkbox-input {
+      margin-right: 10px;
+      margin-left: 10px;
+      &.disabled {
+        color: #d5d5d5;
+        cursor: no-drop !important;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        top: 2px;
+        left: 2px;
+        background-color: #fff;
+        display: none;
+      }
+    }
+
+    input[type="checkbox"]:checked + .checkbox-input::after {
+      display: block;
+    }
+  }
+
+  &.horizontal {
+    flex-direction: row;
+
+    .checkbox-label {
+      margin-right: 16px;
+    }
+  }
+}

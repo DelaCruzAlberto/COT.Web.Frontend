@@ -1,0 +1,130 @@
+<div
+  class="not-mobile"
+  [ngClass]="{
+    'navbar-end': navbarPosition === 'right',
+    'navbar-start': navbarPosition === 'left',
+    'navbar-center': navbarPosition === 'center'
+  }"
+>
+<ng-container *ngFor="let item of itemsMenu">
+  <ng-container *ngIf="!item.hasChildren">
+    <a class="navbar-item" (click)="handleClick(item.href)">
+      <span class="icon">
+        <i [ngClass]="'fas ' + item.icon"></i>
+      </span>
+      <span style="margin-left: 4px">{{ item.label }}</span>
+    </a>
+  </ng-container>
+  <ng-container *ngIf="item.hasChildren">
+    <div class="dropdown is-hoverable navbar-item">
+      <div class="dropdown-trigger">
+        <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu" (click)="toggleSubmenu(item)">
+          <span>{{ item.label }}</span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu" style="width: auto">
+        <div class="dropdown-content">
+          <a class="dropdown-item" *ngFor="let child of item.children" (click)="handleClick(child.href)">
+            <span class="icon dropdown-icon" *ngIf="child.icon">
+              <i [ngClass]="'fas ' + child.icon"></i>
+            </span>
+            <span>{{ child.label }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+</div>
+
+<nav
+  class="navbar"
+  role="navigation"
+  aria-label="main navigation"
+  [ngClass]="{ leftPosition: sidebarPosition == 'left', 'is-active': isActive }"
+>
+  <div class="navbar-brand">
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      (click)="toggleActive()"
+      [ngClass]="{ 'is-active': isActive }"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" [ngClass]="{ 'is-active': isActive }">
+    <div class="menu">
+      <a
+        role="button"
+        class="navbar-burger inside"
+        aria-label="menu"
+        aria-expanded="false"
+        (click)="toggleActive()"
+        [ngClass]="{ 'is-active': isActive }"
+        style="position: absolute; right: 0; right: 0; top: -10px"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <br />
+      <aside class="menu" [ngClass]="{ 'is-active': isActive }">
+        <ul class="menu-list">
+          <li *ngFor="let item of itemsMenu">
+            <div *ngIf="item.hasChildren" class="dropdown">
+              <div class="dropdown-trigger">
+                <button
+                  id="{{ item.label }}"
+                  (click)="toggleSubmenu(item)"
+                  [ngClass]="{ 'has-dropdown': item.hasChildren }"
+                  class="button is-primary is-fullwidth"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span>{{ item.label }}</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <a
+              *ngIf="!item.hasChildren"
+              id="{{ item.label }}"
+              href="{{ item.href }}"
+              [ngClass]="{ 'has-dropdown': item.hasChildren }"
+            >
+              <span class="icon"> <i [ngClass]="'fas ' + item.icon"></i> </span
+              >{{ item.label }}
+            </a>
+            <ul *ngIf="item.children" [ngClass]="{ 'is-hidden': !item.isOpen }">
+              <li *ngFor="let childItem of item.children">
+                <a id="{{ childItem.label }}" href="{{ childItem.href }}">
+                  <span class="icon">
+                    <i [ngClass]="'fas ' + childItem.icon"></i>
+                  </span>
+                  {{ childItem.label }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+  <div
+    class="bg-light-sidebar"
+    (click)="toggleActive()"
+    [ngClass]="{ 'd-none': !isActive }"
+  ></div>
+</nav>

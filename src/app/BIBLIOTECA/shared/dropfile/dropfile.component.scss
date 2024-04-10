@@ -1,0 +1,106 @@
+.dropfile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 13px;
+
+  app-button {
+    margin-top: 10px;
+  }
+  .name-container {
+    display: flex;
+    min-width: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    .name {
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 180px;
+      white-space: nowrap;
+      margin-bottom: 0;
+      font-size: 12px;
+      justify-content: start !important;
+      align-items: center !important;
+    }
+    .proccess {
+      opacity: 0.5;
+    }
+    .finished {
+      color: #00c938;
+    }
+    .error {
+      color: #de0202;
+    }
+    span.icon.trash,
+    span.icon.fa-times {
+      font-size: 10px;
+      transition: 0.3s ease all;
+      cursor: pointer;
+      &:hover {
+        color: #de0202;
+      }
+    }
+    .fa-times {
+      color: #de0202;
+    }
+  }
+  &.dropfile-container-dashed {
+    border: 2px dashed #ccc;
+    transition: 0.3s ease all;
+  }
+}
+
+.supported-extensions {
+  font-size: 10px;
+  margin: 5px auto;
+  margin-bottom: 10px;
+}
+.drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.item-area {
+  margin-top: 5px;
+  padding: 2px;
+  transition: 0.3s ease all;
+  border-radius: 5px;
+  cursor: pointer;
+
+  .fa-spinner {
+    animation: rotate 1s linear infinite;
+  }
+  .fa-spinner,
+  .fa-check,
+  .fa-times {
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.drop-area-active {
+  border-color: black;
+}
+
+li {
+  list-style: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

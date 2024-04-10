@@ -1,0 +1,89 @@
+<div class="field">
+  <div
+    class="control"
+    [ngClass]="{
+      'has-icons-left': iconLeft,
+      'has-icons-right': iconRight || type === 'password',
+      focused: value
+    }"
+  >
+    <input
+      #inputRef
+      *ngIf="type !== 'date'"
+      [disabled]="disabled"
+      class="input
+      {{ disabled ? 'disabled' : '' }}
+      {{ size ? 'is-' + size : '' }}
+      {{ rounded ? 'is-rounded' : '' }}
+      {{ color ? 'is-' + color : '' }}"
+      [type]="type"
+      (focus)="onFocus()"
+      (focusout)="onFocusOut()"
+      (keyup)="onValueChange($event)"
+      [value]="value ? value : ''"
+      autocomplete="new-password"
+    />
+
+    <ng-container *ngIf="type === 'date'">
+      <input
+        #inputRef
+        *ngIf="value"
+        type="date"
+        [disabled]="disabled"
+        class="input
+        {{ disabled ? 'disabled' : '' }}
+        {{ size ? 'is-' + size : '' }}
+        {{ rounded ? 'is-rounded' : '' }}
+        {{ color ? 'is-' + color : '' }}"
+        [value]="value"
+        (change)="onValueChange($event)"
+      />
+      <input
+        #inputRef
+        *ngIf="!value"
+        type="date"
+        class="input 
+        {{ disabled ? 'disabled' : '' }} 
+        {{ size ? 'is-' + size : '' }}
+        {{ rounded ? 'is-rounded' : '' }}
+        {{ color ? 'is-' + color : '' }}"
+        (change)="onValueChange($event)"
+      />
+    </ng-container>
+
+    <ng-container *ngIf="iconLeft">
+      <span class="icon is-small is-left {{ disabled ? 'disabled' : '' }} ">
+        <i class="fas {{ iconLeft }}"></i>
+      </span>
+    </ng-container>
+
+    <span class="{{ type == 'date' ? '' : 'input-placeholder is-' + color }} {{ disabled ? 'disabled' : '' }}">
+      <label>
+        <span *ngIf="iconLeft" class="padding-left {{ disabled ? 'disabled' : '' }} " [ngClass]="'is-' + size">
+          {{ type == "date" ? null : placeholder }}
+        </span>
+        <span *ngIf="!iconLeft" class="no-icon {{ disabled ? 'disabled' : '' }}" [ngClass]="'is-' + size">
+          {{ type == "date" ? null : placeholder }}
+        </span>
+      </label>
+    </span>
+  </div>
+  <span *ngIf="error && isRequired" class="required-asterisk">* {{requiredLabel}}</span>
+
+  <ng-container
+    *ngIf="iconRight || type === 'password' || type === 'hidePassword'"
+  >
+    <span class="icon is-small is-right {{ disabled ? 'disabled' : '' }} ">
+      <i
+        *ngIf="type !== 'password' && type !== 'hidePassword'"
+        class="fas {{ iconRight }}"
+      ></i>
+      <i
+        *ngIf="type === 'password' || type === 'hidePassword'"
+        class="fas"
+        [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+        (click)="togglePasswordVisibility()"
+      ></i>
+    </span>
+  </ng-container>
+</div>

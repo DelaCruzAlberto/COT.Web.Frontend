@@ -1,0 +1,67 @@
+@import "../abstracts/variables";
+
+.menu {
+  font-size: $size-6;
+}
+.menu.is-small {
+  font-size: $size-7;
+}
+.menu.is-medium {
+  font-size: $size-5;
+}
+.menu.is-large {
+  font-size: $size-4;
+}
+.menu-list {
+  line-height: 1.25;
+}
+.menu-list a {
+  transition: .3s ease all;
+  border-radius: 2px;
+  color: $text-strong;
+  display: block;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: 500;
+  span {
+    margin: 0 0.5rem;
+    margin-left: 0rem;
+    height: 1rem;
+    width: 1rem;
+  }
+}
+.menu-list a:hover {
+  background-color: $white;
+  color: $primary;
+}
+.menu-list a.is-active {
+  background-color: $link;
+  color: $white;
+}
+.menu-list li ul {
+
+  padding-left: 1em;
+}
+.menu-label {
+  color: #7a7a7a;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.menu-label:not(:first-child) {
+  margin-top: 1em;
+}
+.menu-label:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.menu-list li {
+  margin: 0.25rem auto;
+  ul {
+    animation: fadeIn 0.3s linear;
+    margin-bottom: 0;
+  }
+}

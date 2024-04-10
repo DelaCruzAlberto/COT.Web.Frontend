@@ -1,0 +1,89 @@
+// 1. Library Configuration Variables
+@import "../base/typography";
+
+// Colors declaration
+
+// Primary Color
+$primary: #fb2632; // normal
+$primary-dark: darken($primary, 10%); // más oscuro
+$primary-dark-bis: darken($primary, 20%); // más oscuro 2
+// ----------------------------------------------------------
+$primary-light: lighten($primary, 10%); // más claro 1
+$primary-light-bis: lighten($primary, 20%); // más claro 2
+$primary-light-ter: lighten($primary, 30%); // más claro 3
+
+
+
+// General colors
+$link: #4286f4; // normal
+$link-dark: #0e6bf7; // normal :hover
+$link-dark-bis: #0052ce; // normal :active
+$link-light: #eff3fc; // .is-light
+$link-light-bis: #eaf0fd; // .is-light :hover
+$link-light-ter: #d9e6ff; // .is-light :active
+
+$info: #ffc700; // normal
+$info-dark: #e8b500; // normal :hover
+$info-dark-bis: #d2a402; // normal :active
+$info-light: #fefff2; // .is-light
+$info-light-bis: #fdffe7; // .is-light :hover
+$info-light-ter: #fcffd9; // .is-light :active
+
+$success: #00c938; // normal
+$success-dark: #00a92f; // normal :hover
+$success-dark-bis: #008525; // normal :active
+$success-light: #f2ffec; // .is-light
+$success-light-bis: #e5ffd9; // .is-light :hover
+$success-light-ter: #d6ffc3; // .is-light :active
+
+$warning: #ff933e; // normal
+$warning-dark: #ff7613; // normal :hover
+$warning-dark-bis: #eb6300; // normal :active
+$warning-light: #fffaf7; // .is-light
+$warning-light-bis: #fff3ef; // .is-light :hover
+$warning-light-ter: #ffebe4; // .is-light :active
+
+$danger: #de0202; // normal
+$danger-dark: #c70202; // normal :hover
+$danger-dark-bis: #b20202; // normal :active
+$danger-light: #fff7f7; // .is-light
+$danger-light-bis: #ffefef; // .is-light :hover
+$danger-light-ter: #ffe4e4; // .is-light :active
+
+$black: hsl(0, 0%, 4%);
+$black-bis: hsl(0, 0%, 7%);
+$black-ter: hsl(0, 0%, 14%);
+
+$grey-darker: #989898;
+$grey-dark: #c4c4c4;
+$grey: #dadada;
+$grey-light: #dddddd;
+$grey-lighter: #e1e1e1;
+$grey-lightest: #e5e5e5;
+
+$white-ter: hsl(0, 0%, 96%);
+$white-bis: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$text-strong: hsl(0, 0%, 21%);
+$transparent: transparent;
+
+// Components sizes declaration
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.75rem;
+
+// Text weight declaration
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// Variable usage & extra
+$border: $grey-lighter;
+$scheme-main: $white;

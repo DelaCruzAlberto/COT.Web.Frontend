@@ -1,0 +1,32 @@
+<div class="field">
+  <div class="control" (blur)="toggleInputActive(false)">
+    <div class="chips-input">
+      <input
+        class="input"
+        type="text"
+        [placeholder]="placeholder"
+        [(ngModel)]="inputValue"
+        (keyup.enter)="addSelectedItem(inputValue)"
+        (focus)="toggleInputActive(true)"
+      />
+      <div class="chips-list">
+        <div class="chip" *ngFor="let item of selectedItems">
+          <span style="padding-right: 6px"> {{ item }}</span>
+          <span class="delete" (click)="removeSelectedItem(item)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown is-active chiplist-dropdown" *ngIf="isInputActive">
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <a
+            class="dropdown-item"
+            *ngFor="let item of chipList"
+            (click)="addSelectedItem(item)"
+            >{{ item }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

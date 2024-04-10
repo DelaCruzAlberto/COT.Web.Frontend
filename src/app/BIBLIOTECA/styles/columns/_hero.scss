@@ -1,0 +1,887 @@
+@import "../abstracts/variables";
+
+.hero.is-fullheight-with-navbar {
+  min-height: calc(100vh - 3.25rem);
+}
+
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero .navbar {
+  background: 0 0;
+}
+.hero .tabs ul {
+  border-bottom: none;
+}
+.hero.is-white {
+  background-color: $white;
+  color: $black;
+}
+.hero.is-white
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-white strong {
+  color: inherit;
+}
+.hero.is-white .title {
+  color: $black;
+}
+.hero.is-white .subtitle {
+  color: rgba(10, 10, 10, 0.9);
+}
+.hero.is-white .subtitle a:not(.button),
+.hero.is-white .subtitle strong {
+  color: $black;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-white .navbar-menu {
+    background-color: $white;
+  }
+}
+.hero.is-white .navbar-item,
+.hero.is-white .navbar-link {
+  color: rgba(10, 10, 10, 0.7);
+}
+.hero.is-white .navbar-link.is-active,
+.hero.is-white .navbar-link:hover,
+.hero.is-white a.navbar-item.is-active,
+.hero.is-white a.navbar-item:hover {
+  background-color: $white;
+  color: $black;
+}
+.hero.is-white .tabs a {
+  color: $black;
+  opacity: 0.9;
+}
+.hero.is-white .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-white .tabs li.is-active a {
+  color: $white !important;
+  opacity: 1;
+}
+.hero.is-white .tabs.is-boxed a,
+.hero.is-white .tabs.is-toggle a {
+  color: $black;
+}
+.hero.is-white .tabs.is-boxed a:hover,
+.hero.is-white .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-white .tabs.is-boxed li.is-active a,
+.hero.is-white .tabs.is-boxed li.is-active a:hover,
+.hero.is-white .tabs.is-toggle li.is-active a,
+.hero.is-white .tabs.is-toggle li.is-active a:hover {
+  background-color: $black;
+  border-color: $black;
+  color: $white;
+}
+.hero.is-white.is-bold {
+  background-image: linear-gradient(141deg, #e6e6e6 0, $white 71%, $white 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero.is-white.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #e6e6e6 0,
+      $white 71%,
+      $white 100%
+    );
+  }
+}
+.hero.is-black {
+  background-color: $black;
+  color: $white;
+}
+.hero.is-black
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-black strong {
+  color: inherit;
+}
+.hero.is-black .title {
+  color: $white;
+}
+.hero.is-black .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-black .subtitle a:not(.button),
+.hero.is-black .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-black .navbar-menu {
+    background-color: $black;
+  }
+}
+.hero.is-black .navbar-item,
+.hero.is-black .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-black .navbar-link.is-active,
+.hero.is-black .navbar-link:hover,
+.hero.is-black a.navbar-item.is-active,
+.hero.is-black a.navbar-item:hover {
+  background-color: #000;
+  color: $white;
+}
+.hero.is-black .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-black .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-black .tabs li.is-active a {
+  color: $black !important;
+  opacity: 1;
+}
+.hero.is-black .tabs.is-boxed a,
+.hero.is-black .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-black .tabs.is-boxed a:hover,
+.hero.is-black .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-black .tabs.is-boxed li.is-active a,
+.hero.is-black .tabs.is-boxed li.is-active a:hover,
+.hero.is-black .tabs.is-toggle li.is-active a,
+.hero.is-black .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $black;
+}
+.hero.is-black.is-bold {
+  background-image: linear-gradient(141deg, #000 0, $black 71%, #181616 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero.is-black.is-bold .navbar-menu {
+    background-image: linear-gradient(141deg, #000 0, $black 71%, #181616 100%);
+  }
+}
+.hero.is-light {
+  background-color: $white;
+  color: $black-bis;
+}
+.hero.is-light
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-light strong {
+  color: inherit;
+}
+.hero.is-light .title {
+  color: $black-bis;
+}
+.hero.is-light .subtitle {
+  color: rgba(0, 0, 0, 0.9);
+}
+.hero.is-light .subtitle a:not(.button),
+.hero.is-light .subtitle strong {
+  color: $black-bis;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-light .navbar-menu {
+    background-color: $white;
+  }
+}
+.hero.is-light .navbar-item,
+.hero.is-light .navbar-link {
+  color: $black-bis;
+}
+.hero.is-light .navbar-link.is-active,
+.hero.is-light .navbar-link:hover,
+.hero.is-light a.navbar-item.is-active,
+.hero.is-light a.navbar-item:hover {
+  background-color: #e8e8e8;
+  color: $black-bis;
+}
+.hero.is-light .tabs a {
+  color: $black-bis;
+  opacity: 0.9;
+}
+.hero.is-light .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-light .tabs li.is-active a {
+  color: $white !important;
+  opacity: 1;
+}
+.hero.is-light .tabs.is-boxed a,
+.hero.is-light .tabs.is-toggle a {
+  color: $black-bis;
+}
+.hero.is-light .tabs.is-boxed a:hover,
+.hero.is-light .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-light .tabs.is-boxed li.is-active a,
+.hero.is-light .tabs.is-boxed li.is-active a:hover,
+.hero.is-light .tabs.is-toggle li.is-active a,
+.hero.is-light .tabs.is-toggle li.is-active a:hover {
+  background-color: $black-bis;
+  border-color: $black-bis;
+  color: $white;
+}
+.hero.is-light.is-bold {
+  background-image: linear-gradient(141deg, #dfd8d9 0, $white 71%, $white 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero.is-light.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #dfd8d9 0,
+      $white 71%,
+      $white 100%
+    );
+  }
+}
+.hero.is-dark {
+  background-color: $grey-darker;
+  color: $white;
+}
+.hero.is-dark
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-dark strong {
+  color: inherit;
+}
+.hero.is-dark .title {
+  color: $white;
+}
+.hero.is-dark .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-dark .subtitle a:not(.button),
+.hero.is-dark .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-dark .navbar-menu {
+    background-color: $grey-darker;
+  }
+}
+.hero.is-dark .navbar-item,
+.hero.is-dark .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-dark .navbar-link.is-active,
+.hero.is-dark .navbar-link:hover,
+.hero.is-dark a.navbar-item.is-active,
+.hero.is-dark a.navbar-item:hover {
+  background-color: #292929;
+  color: $white;
+}
+.hero.is-dark .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-dark .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-dark .tabs li.is-active a {
+  color: $grey-darker !important;
+  opacity: 1;
+}
+.hero.is-dark .tabs.is-boxed a,
+.hero.is-dark .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-dark .tabs.is-boxed a:hover,
+.hero.is-dark .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-dark .tabs.is-boxed li.is-active a,
+.hero.is-dark .tabs.is-boxed li.is-active a:hover,
+.hero.is-dark .tabs.is-toggle li.is-active a,
+.hero.is-dark .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $grey-darker;
+}
+.hero.is-dark.is-bold {
+  background-image: linear-gradient(
+    141deg,
+    #1f191a 0,
+    $grey-darker 71%,
+    #46403f 100%
+  );
+}
+@media screen and (max-width: 768px) {
+  .hero.is-dark.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #1f191a 0,
+      $grey-darker 71%,
+      #46403f 100%
+    );
+  }
+}
+.hero.is-primary {
+  background-color: $primary;
+  color: $white;
+}
+.hero.is-primary
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-primary strong {
+  color: inherit;
+}
+.hero.is-primary .title {
+  color: $white;
+}
+.hero.is-primary .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-primary .subtitle a:not(.button),
+.hero.is-primary .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-primary .navbar-menu {
+    background-color: $primary;
+  }
+}
+.hero.is-primary .navbar-item,
+.hero.is-primary .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-primary .navbar-link.is-active,
+.hero.is-primary .navbar-link:hover,
+.hero.is-primary a.navbar-item.is-active,
+.hero.is-primary a.navbar-item:hover {
+  background-color: $primary-dark;
+  color: $white;
+}
+.hero.is-primary .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-primary .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-primary .tabs li.is-active a {
+  color: $primary !important;
+  opacity: 1;
+}
+.hero.is-primary .tabs.is-boxed a,
+.hero.is-primary .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-primary .tabs.is-boxed a:hover,
+.hero.is-primary .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-primary .tabs.is-boxed li.is-active a,
+.hero.is-primary .tabs.is-boxed li.is-active a:hover,
+.hero.is-primary .tabs.is-toggle li.is-active a,
+.hero.is-primary .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $primary;
+}
+.hero.is-primary.is-bold {
+  background-image: linear-gradient(
+    141deg,
+    $primary-dark 0,
+    $primary 71%,
+    #00e7eb 100%
+  );
+}
+@media screen and (max-width: 768px) {
+  .hero.is-primary.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      $primary-dark 0,
+      $primary 71%,
+      #00e7eb 100%
+    );
+  }
+}
+.hero.is-link {
+  background-color: $link;
+  color: $white;
+}
+.hero.is-link
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-link strong {
+  color: inherit;
+}
+.hero.is-link .title {
+  color: $white;
+}
+.hero.is-link .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-link .subtitle a:not(.button),
+.hero.is-link .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-link .navbar-menu {
+    background-color: $link;
+  }
+}
+.hero.is-link .navbar-item,
+.hero.is-link .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-link .navbar-link.is-active,
+.hero.is-link .navbar-link:hover,
+.hero.is-link a.navbar-item.is-active,
+.hero.is-link a.navbar-item:hover {
+  background-color: #3a51bb;
+  color: $white;
+}
+.hero.is-link .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-link .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-link .tabs li.is-active a {
+  color: $link !important;
+  opacity: 1;
+}
+.hero.is-link .tabs.is-boxed a,
+.hero.is-link .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-link .tabs.is-boxed a:hover,
+.hero.is-link .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-link .tabs.is-boxed li.is-active a,
+.hero.is-link .tabs.is-boxed li.is-active a:hover,
+.hero.is-link .tabs.is-toggle li.is-active a,
+.hero.is-link .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $link;
+}
+.hero.is-link.is-bold {
+  background-image: linear-gradient(141deg, #2959b3 0, $link 71%, #5658d2 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero.is-link.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #2959b3 0,
+      $link 71%,
+      #5658d2 100%
+    );
+  }
+}
+.hero.is-info {
+  background-color: $info;
+  color: $white;
+}
+.hero.is-info
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-info strong {
+  color: inherit;
+}
+.hero.is-info .title {
+  color: $white;
+}
+.hero.is-info .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-info .subtitle a:not(.button),
+.hero.is-info .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-info .navbar-menu {
+    background-color: $info;
+  }
+}
+.hero.is-info .navbar-item,
+.hero.is-info .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-info .navbar-link.is-active,
+.hero.is-info .navbar-link:hover,
+.hero.is-info a.navbar-item.is-active,
+.hero.is-info a.navbar-item:hover {
+  background-color: #3082c5;
+  color: $white;
+}
+.hero.is-info .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-info .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-info .tabs li.is-active a {
+  color: $info !important;
+  opacity: 1;
+}
+.hero.is-info .tabs.is-boxed a,
+.hero.is-info .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-info .tabs.is-boxed a:hover,
+.hero.is-info .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-info .tabs.is-boxed li.is-active a,
+.hero.is-info .tabs.is-boxed li.is-active a:hover,
+.hero.is-info .tabs.is-toggle li.is-active a,
+.hero.is-info .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $info;
+}
+.hero.is-info.is-bold {
+  background-image: linear-gradient(141deg, #208fbc 0, $info 71%, #4d83db 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero.is-info.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #208fbc 0,
+      $info 71%,
+      #4d83db 100%
+    );
+  }
+}
+.hero.is-success {
+  background-color: $success;
+  color: $white;
+}
+.hero.is-success
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-success strong {
+  color: inherit;
+}
+.hero.is-success .title {
+  color: $white;
+}
+.hero.is-success .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-success .subtitle a:not(.button),
+.hero.is-success .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-success .navbar-menu {
+    background-color: $success;
+  }
+}
+.hero.is-success .navbar-item,
+.hero.is-success .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-success .navbar-link.is-active,
+.hero.is-success .navbar-link:hover,
+.hero.is-success a.navbar-item.is-active,
+.hero.is-success a.navbar-item:hover {
+  background-color: #3abb81;
+  color: $white;
+}
+.hero.is-success .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-success .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-success .tabs li.is-active a {
+  color: $success !important;
+  opacity: 1;
+}
+.hero.is-success .tabs.is-boxed a,
+.hero.is-success .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-success .tabs.is-boxed a:hover,
+.hero.is-success .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-success .tabs.is-boxed li.is-active a,
+.hero.is-success .tabs.is-boxed li.is-active a:hover,
+.hero.is-success .tabs.is-toggle li.is-active a,
+.hero.is-success .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $success;
+}
+.hero.is-success.is-bold {
+  background-image: linear-gradient(
+    141deg,
+    #29b35e 0,
+    $success 71%,
+    #56d2af 100%
+  );
+}
+@media screen and (max-width: 768px) {
+  .hero.is-success.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #29b35e 0,
+      $success 71%,
+      #56d2af 100%
+    );
+  }
+}
+.hero.is-warning {
+  background-color: $warning;
+  color: $black-bis;
+}
+.hero.is-warning
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-warning strong {
+  color: inherit;
+}
+.hero.is-warning .title {
+  color: $black-bis;
+}
+.hero.is-warning .subtitle {
+  color: rgba(0, 0, 0, 0.9);
+}
+.hero.is-warning .subtitle a:not(.button),
+.hero.is-warning .subtitle strong {
+  color: $black-bis;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-warning .navbar-menu {
+    background-color: $warning;
+  }
+}
+.hero.is-warning .navbar-item,
+.hero.is-warning .navbar-link {
+  color: $black-bis;
+}
+.hero.is-warning .navbar-link.is-active,
+.hero.is-warning .navbar-link:hover,
+.hero.is-warning a.navbar-item.is-active,
+.hero.is-warning a.navbar-item:hover {
+  background-color: #ffd970;
+  color: $black-bis;
+}
+.hero.is-warning .tabs a {
+  color: $black-bis;
+  opacity: 0.9;
+}
+.hero.is-warning .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-warning .tabs li.is-active a {
+  color: $warning !important;
+  opacity: 1;
+}
+.hero.is-warning .tabs.is-boxed a,
+.hero.is-warning .tabs.is-toggle a {
+  color: $black-bis;
+}
+.hero.is-warning .tabs.is-boxed a:hover,
+.hero.is-warning .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-warning .tabs.is-boxed li.is-active a,
+.hero.is-warning .tabs.is-boxed li.is-active a:hover,
+.hero.is-warning .tabs.is-toggle li.is-active a,
+.hero.is-warning .tabs.is-toggle li.is-active a:hover {
+  background-color: $black-bis;
+  border-color: $black-bis;
+  color: $warning;
+}
+.hero.is-warning.is-bold {
+  background-image: linear-gradient(
+    141deg,
+    #ffb657 0,
+    $warning 71%,
+    $white 100%
+  );
+}
+@media screen and (max-width: 768px) {
+  .hero.is-warning.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #ffb657 0,
+      $warning 71%,
+      $white 100%
+    );
+  }
+}
+.hero.is-danger {
+  background-color: $danger;
+  color: $white;
+}
+.hero.is-danger
+  a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+.hero.is-danger strong {
+  color: inherit;
+}
+.hero.is-danger .title {
+  color: $white;
+}
+.hero.is-danger .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero.is-danger .subtitle a:not(.button),
+.hero.is-danger .subtitle strong {
+  color: $white;
+}
+@media screen and (max-width: 1023px) {
+  .hero.is-danger .navbar-menu {
+    background-color: $danger;
+  }
+}
+.hero.is-danger .navbar-item,
+.hero.is-danger .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero.is-danger .navbar-link.is-active,
+.hero.is-danger .navbar-link:hover,
+.hero.is-danger a.navbar-item.is-active,
+.hero.is-danger a.navbar-item:hover {
+  background-color: #ef2e55;
+  color: $white;
+}
+.hero.is-danger .tabs a {
+  color: $white;
+  opacity: 0.9;
+}
+.hero.is-danger .tabs a:hover {
+  opacity: 1;
+}
+.hero.is-danger .tabs li.is-active a {
+  color: $danger !important;
+  opacity: 1;
+}
+.hero.is-danger .tabs.is-boxed a,
+.hero.is-danger .tabs.is-toggle a {
+  color: $white;
+}
+.hero.is-danger .tabs.is-boxed a:hover,
+.hero.is-danger .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+.hero.is-danger .tabs.is-boxed li.is-active a,
+.hero.is-danger .tabs.is-boxed li.is-active a:hover,
+.hero.is-danger .tabs.is-toggle li.is-active a,
+.hero.is-danger .tabs.is-toggle li.is-active a:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $danger;
+}
+.hero.is-danger.is-bold {
+  background-image: linear-gradient(
+    141deg,
+    #fa0a62 0,
+    $danger 71%,
+    #f7595f 100%
+  );
+}
+@media screen and (max-width: 768px) {
+  .hero.is-danger.is-bold .navbar-menu {
+    background-image: linear-gradient(
+      141deg,
+      #fa0a62 0,
+      $danger 71%,
+      #f7595f 100%
+    );
+  }
+}
+.hero.is-small .hero-body {
+  padding: 1.5rem;
+}
+@media screen and (min-width: 769px), print {
+  .hero.is-medium .hero-body {
+    padding: 9rem 4.5rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .hero.is-large .hero-body {
+    padding: 18rem 6rem;
+  }
+}
+.hero.is-fullheight .hero-body,
+.hero.is-fullheight-with-navbar .hero-body,
+.hero.halfheight .hero-body {
+  align-items: center;
+  display: flex;
+}
+.hero.is-fullheight .hero-body > .container,
+.hero.is-fullheight-with-navbar .hero-body > .container,
+.hero.halfheight .hero-body > .container {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.hero.halfheight {
+  min-height: 50vh;
+}
+.hero.is-fullheight {
+  min-height: 100vh;
+}
+.hero-video {
+  overflow: hidden;
+}
+.hero-video video {
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.hero-video.is-transparent {
+  opacity: 0.3;
+}
+@media screen and (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+}
+.hero-buttons {
+  margin-top: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .hero-buttons .button {
+    display: flex;
+  }
+  .hero-buttons .button:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-buttons .button:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+}
+.hero-foot,
+.hero-head {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.hero-body {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 3rem 1.5rem;
+}
+@media screen and (min-width: 769px), print {
+  .hero-body {
+    padding: 3rem 3rem;
+  }
+}
+.section {
+  padding: 3rem 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 3rem 3rem;
+  }
+  .section.is-medium {
+    padding: 9rem 4.5rem;
+  }
+  .section.is-large {
+    padding: 18rem 6rem;
+  }
+}

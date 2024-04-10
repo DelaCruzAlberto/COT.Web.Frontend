@@ -1,0 +1,32 @@
+<div class="card pie-card">
+  <ng-content></ng-content>
+
+  <div class="card-content">
+    <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+      <ng-container *ngFor="let slice of data; let i = index">
+        <path
+          [attr.d]="getSlicePath(slice.value, i)"
+          [attr.fill]="slice.color"
+          [class.hovered]="selectedColorIndex === i"
+          (mouseenter)="showTooltip(slice.color)"
+          (mouseleave)="hideTooltip()"
+        ></path>
+      </ng-container>
+    </svg>
+    <div class="tooltip-wrapper" *ngFor="let item of data">
+      <div
+        class="tooltip"
+        *ngIf="tooltipVisible && item.color === selectedColor"
+      >
+        <span class="color-box" [style.background-color]="item.color"></span>
+        {{ getPercentage(selectedData?.value) }} {{ selectedData?.text }}
+      </div>
+    </div>
+  </div>
+  <div class="text-wrapper">
+    <div class="tooltip" *ngFor="let item of data">
+      <span class="color-box" [style.background-color]="item.color"></span>
+      {{ item.text }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<button
+  class="button"
+  [disabled]="loading || isDisabled"
+  [attr.title]="text"
+  [ngClass]="(text ?? '').length <= 0 ? buttonsClass + ' no-text' : buttonsClass"
+>
+  <span *ngIf="icon && iconPosition == 'left'" class="icon is-small">
+    <i class="fas" [ngClass]="icon"></i>
+  </span>
+  <span>{{ text }}</span>
+  <span *ngIf="icon && iconPosition == 'right'" class="icon is-small">
+    <i class="fas" [ngClass]="icon"></i>
+  </span>
+</button>

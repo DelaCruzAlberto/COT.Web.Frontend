@@ -1,0 +1,317 @@
+@import "../abstracts/variables";
+
+.table {
+  background-color: $white;
+  color: $grey-darker;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  border: 1px solid #dbdbdb;
+  border-width: 0 0 1px;
+  padding: 0.5em 0.85em;
+  vertical-align: top;
+  min-width: 100px;
+}
+.table td.is-white,
+.table th.is-white {
+  background-color: $white;
+  border-color: $white;
+  color: $black;
+}
+.table td.is-black,
+.table th.is-black {
+  background-color: $black;
+  border-color: $black;
+  color: $white;
+}
+.table td.is-light,
+.table th.is-light {
+  background-color: $white;
+  border-color: $white;
+  color: $black-bis;
+}
+.table td.is-dark,
+.table th.is-dark {
+  background-color: $grey-darker;
+  border-color: $grey-darker;
+  color: $white;
+}
+.table td.is-primary,
+.table th.is-primary {
+  background-color: $primary;
+  border-color: $primary;
+  color: $white;
+}
+.table td.is-link,
+.table th.is-link {
+  background-color: $link;
+  border-color: $link;
+  color: $white;
+}
+.table td.is-info,
+.table th.is-info {
+  background-color: $info;
+  border-color: $info;
+  color: $white;
+}
+.table td.is-success,
+.table th.is-success {
+  background-color: $success;
+  border-color: $success;
+  color: $white;
+}
+.table td.is-warning,
+.table th.is-warning {
+  background-color: $warning;
+  border-color: $warning;
+  color: $black-bis;
+}
+.table td.is-danger,
+.table th.is-danger {
+  background-color: $danger;
+  border-color: $danger;
+  color: $white;
+}
+.table td.is-narrow,
+.table th.is-narrow {
+  white-space: nowrap;
+  width: 1%;
+}
+.table td.is-selected,
+.table th.is-selected {
+  background-color: $primary;
+  color: $white;
+}
+.table td.is-selected a,
+.table td.is-selected strong,
+.table th.is-selected a,
+.table th.is-selected strong {
+  color: currentColor;
+}
+.table td.is-vcentered,
+.table th.is-vcentered {
+  vertical-align: middle;
+}
+.table th {
+  color: $grey-darker;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+.table tr.is-selected {
+  background-color: $primary;
+  color: $white;
+}
+.table tr.is-selected a,
+.table tr.is-selected strong {
+  color: currentColor;
+}
+.table tr.is-selected td,
+.table tr.is-selected th {
+  border-color: $white;
+  color: currentColor;
+}
+.table thead {
+  background-color: transparent;
+}
+.table thead td,
+.table thead th {
+  border-width: 0 0 2px;
+  color: $grey-darker;
+}
+.table tfoot {
+  background-color: transparent;
+}
+.table tfoot td,
+.table tfoot th {
+  border-width: 2px 0 0;
+  color: $grey-darker;
+}
+.table tbody {
+  background-color: transparent;
+}
+.table tbody tr:last-child td,
+.table tbody tr:last-child th {
+  border-bottom-width: 0;
+}
+.table.is-bordered td,
+.table.is-bordered th {
+  border-width: 1px;
+}
+.table.is-bordered tr:last-child td,
+.table.is-bordered tr:last-child th {
+  border-bottom-width: 1px;
+}
+.table.is-fullwidth {
+  width: 100%;
+}
+.table.is-hoverable tbody tr:not(.is-selected):hover {
+  background-color: $grey-lighter;
+}
+.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
+  background-color: $grey-lighter;
+}
+.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover:nth-child(2n) {
+  background-color: $grey-lighter;
+}
+.table.is-narrow td,
+.table.is-narrow th {
+  padding: 0.25em 0.5em;
+}
+.table.is-striped tbody tr:not(.is-selected):nth-child(2n) {
+  background-color: #fafafa;
+}
+.table-container {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+th .sortable {
+  cursor: pointer;
+}
+
+th i.sort-icon {
+  opacity: 0;
+  transition: 0.3s ease all;
+  margin-left: 0.3rem;
+}
+
+th:hover i.sort-icon {
+  opacity: 1;
+}
+
+td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-size-selector {
+  margin-bottom: 10px;
+}
+
+.page-size-selector label {
+  margin-right: 10px;
+}
+
+.page-size-selector select {
+  margin-right: 10px;
+}
+
+nav.is-small.table-footer {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.table-wrapper {
+  border-radius: 10px;
+  width: 95%;
+  margin: auto;
+  overflow-x: auto;
+  display: block !important;
+  .pagination {
+    width: 99% !important;
+    margin: auto !important;
+  }
+  .pagination-next,
+  .pagination-previous {
+    border: none !important;
+    margin: 0 !important;
+  }
+  .itemsPerPage,
+  .table-pagination,
+  .pagination-previous,
+  .pagination-next {
+    margin-bottom: 0.5rem !important;
+  }
+  .itemsPerPage {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    p{
+      margin-bottom: 0;
+      color: #434040;
+    }
+  }
+  .table-pagination {
+    margin: 0 1rem;
+  }
+  select {
+    border: none;
+    border-bottom: 2px solid $primary !important;
+    border-radius: 0 !important;
+    margin-left: 0.5rem;
+    font-family: $app-font-family;
+    padding-bottom: 0.2em !important;
+  }
+  .select:not(.is-multiple):not(.is-loading)::after {
+    border-color: $primary;
+  }
+  .select:not(.is-multiple):not(.is-loading):hover::after {
+    border-color: $primary;
+  }
+}
+.table {
+  .sort-header {
+    font-size: 12px;
+    color: #939393;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  td {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 300;
+    padding-left: 1rem;
+    min-width: 120px;
+    max-width: 120px;
+    width: 120px;
+    span {
+      width: 100%;
+      display: block;
+    }
+    i {
+      padding: 0 0.25rem;
+    }
+    .disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  td.checkboxItem {
+    min-width: 1%;
+    max-width: 2% !important;
+    width: 2% !important;
+    padding-left: 0.7em;
+  }
+  .thtd-isHidden {
+    display: none;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    flex-wrap: wrap;
+    width: 99% !important;
+    margin: auto !important;
+  }
+  .pagination-next,
+  .pagination-previous {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    border: none !important;
+  }
+}

@@ -1,0 +1,22 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
+  margin: 0.25rem;
+  background-color: #e0e0e0;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 12px;
+  .delete{
+    transform: scale(.7);
+    color: rgba(0, 0, 0, 0.87);
+    opacity: 0.4;
+    background-color: rgba(0,0,0,0.87);
+    transition: .3s ease all;
+    &:hover{
+      opacity: .7
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.bar-chart {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 10px;
+  height: 50vh;
+  align-items: center;
+  transition: .3s ease all;
+  .bar-label {
+    font-size: 14px;
+    margin-top: 6px;
+    width: 80px;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+  &:hover{
+    opacity: .75;
+  }
+}
+
+.bar-progress {
+  width: 40px !important;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  color: #fff;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+i {
+  cursor: pointer;
+  margin: 10px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.bar-progress {
+  transition: 0.3s ease all;
+  animation: fill 1s linear forwards;
+
+  .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.card {
+  max-width: 500px;
+  padding-bottom: 1rem;
+  .card-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.bars-wrapper {
+  display: flex;
+}
+
+@keyframes fill {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

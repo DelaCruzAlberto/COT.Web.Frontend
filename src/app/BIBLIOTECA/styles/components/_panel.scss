@@ -1,0 +1,198 @@
+@import "../abstracts/variables";
+
+.panel {
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+  font-size: 1rem;
+}
+.panel:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.panel.is-white .panel-heading {
+  background-color: $white;
+  color: $black;
+}
+.panel.is-white .panel-tabs a.is-active {
+  border-bottom-color: $white;
+}
+.panel.is-white .panel-block.is-active .panel-icon {
+  color: $white;
+}
+.panel.is-black .panel-heading {
+  background-color: $black;
+  color: $white;
+}
+.panel.is-black .panel-tabs a.is-active {
+  border-bottom-color: $black;
+}
+.panel.is-black .panel-block.is-active .panel-icon {
+  color: $black;
+}
+.panel.is-light .panel-heading {
+  background-color: $white;
+  color: $black-bis;
+}
+.panel.is-light .panel-tabs a.is-active {
+  border-bottom-color: $white;
+}
+.panel.is-light .panel-block.is-active .panel-icon {
+  color: $white;
+}
+.panel.is-dark .panel-heading {
+  background-color: $grey-darker;
+  color: $white;
+}
+.panel.is-dark .panel-tabs a.is-active {
+  border-bottom-color: $grey-darker;
+}
+.panel.is-dark .panel-block.is-active .panel-icon {
+  color: $grey-darker;
+}
+.panel.is-primary .panel-heading {
+  background-color: $primary;
+  color: $white;
+}
+.panel.is-primary .panel-tabs a.is-active {
+  border-bottom-color: $primary;
+}
+.panel.is-primary .panel-block.is-active .panel-icon {
+  color: $primary;
+}
+.panel.is-link .panel-heading {
+  background-color: $link;
+  color: $white;
+}
+.panel.is-link .panel-tabs a.is-active {
+  border-bottom-color: $link;
+}
+.panel.is-link .panel-block.is-active .panel-icon {
+  color: $link;
+}
+.panel.is-info .panel-heading {
+  background-color: $info;
+  color: $white;
+}
+.panel.is-info .panel-tabs a.is-active {
+  border-bottom-color: $info;
+}
+.panel.is-info .panel-block.is-active .panel-icon {
+  color: $info;
+}
+.panel.is-success .panel-heading {
+  background-color: $success;
+  color: $white;
+}
+.panel.is-success .panel-tabs a.is-active {
+  border-bottom-color: $success;
+}
+.panel.is-success .panel-block.is-active .panel-icon {
+  color: $success;
+}
+.panel.is-warning .panel-heading {
+  background-color: $warning;
+  color: $black-bis;
+}
+.panel.is-warning .panel-tabs a.is-active {
+  border-bottom-color: $warning;
+}
+.panel.is-warning .panel-block.is-active .panel-icon {
+  color: $warning;
+}
+.panel.is-danger .panel-heading {
+  background-color: $danger;
+  color: $white;
+}
+.panel.is-danger .panel-tabs a.is-active {
+  border-bottom-color: $danger;
+}
+.panel.is-danger .panel-block.is-active .panel-icon {
+  color: $danger;
+}
+.panel-block:not(:last-child),
+.panel-tabs:not(:last-child) {
+  border-bottom: 1px solid #ededed;
+}
+.panel-heading {
+  background-color: #ededed;
+  border-radius: 6px 6px 0 0;
+  color: $grey-darker;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.75em 1em;
+}
+.panel-tabs {
+  align-items: flex-end;
+  display: flex;
+  font-size: 0.875em;
+  justify-content: center;
+}
+.panel-tabs a {
+  border-bottom: 1px solid $grey-lighter;
+  margin-bottom: -1px;
+  padding: 0.5em;
+}
+.panel-tabs a.is-active {
+  border-bottom-color: #4a4a4a;
+  color: $grey-darker;
+}
+.panel-list a {
+  color: #4a4a4a;
+}
+.panel-list a:hover {
+  color: $link;
+}
+.panel-block {
+  align-items: center;
+  color: $black-ter;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 0.75em;
+
+}
+.panel-block input[type="checkbox"] {
+  margin-right: 0.75em;
+}
+.panel-block > .control {
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 100%;
+}
+.panel-block.is-wrapped {
+  flex-wrap: wrap;
+}
+.panel-block.is-active {
+  border-left-color: $link;
+  color: $primary;
+}
+.panel-block.is-active .panel-icon {
+  color: $link;
+}
+.panel-block:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+a.panel-block,
+label.panel-block {
+  cursor: pointer;
+}
+a.panel-block:hover,
+label.panel-block:hover {
+  background-color: $white;
+}
+.panel-icon {
+  display: inline-block;
+  font-size: 14px;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  vertical-align: top;
+  width: 1em;
+  color: #7a7a7a;
+  margin-right: 0.75em;
+}
+.panel-icon .fa {
+  font-size: inherit;
+  line-height: inherit;
+}

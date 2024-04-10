@@ -1,0 +1,15 @@
+<div [ngClass]="tabsClass">
+  <ul class="tabs-ul">
+    <li
+      *ngFor="let item of items; let i = index"
+      [ngClass]="{ 'is-active': item.active }"
+    >
+      <a (click)="activateTab(item)">
+        <span *ngIf="item.icon" class="icon is-small">
+          <i [ngClass]="'fas ' + item.icon" aria-hidden="true"></i>
+        </span>
+        <span>{{ item.label }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

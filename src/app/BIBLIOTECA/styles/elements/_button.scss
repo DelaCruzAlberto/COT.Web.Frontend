@@ -1,0 +1,1706 @@
+@import "../abstracts/variables";
+
+$button-color: $text-strong;
+$button-background-color: $scheme-main;
+$button-border-color: $border;
+$button-border-width: 1px;
+$button-padding-vertical: 1rem;
+$button-padding-horizontal: 1rem;
+$button-hover-color: $grey-darker;
+$button-hover-border-color: $grey-light;
+$button-focus-color: $grey-darker;
+$button-focus-border-color: $link;
+$button-active-color: $grey-darker;
+$button-active-border-color: $grey-dark;
+$button-text-color: $grey-dark;
+$button-text-decoration: underline;
+$button-text-focused-hovered-background-color: #f5f5f5;
+$button-text-active-background-color: #e8e8e8;
+$button-white-color: $black-bis;
+$button-white-border-color: $black-bis;
+$button-white-background-color: $black-bis;
+$button-white-hover-background-color: $white-bis;
+$button-white-focused-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25);
+$button-white-active-shadow: $white-ter;
+$button-black-focus: 0 0 0 0.125em rgba(10, 10, 10, 0.25);
+$button-light-color: rgba(0, 0, 0, 0.7);
+$button-light-background-color: rgba(0, 0, 0, 0.7);
+$button-light-border-color: rgba(0, 0, 0, 0.7);
+$button-light-active-background-color: #e8e8e8;
+$button-light-focused-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25);
+$button-light-disabled-background-color: #f5f5f5;
+$button-light-disabled-border-color: #f5f5f5;
+$button-light-disabled-color: #f5f5f5;
+$button-dark-background-color: #363636;
+$button-dark-border-color: #363636;
+$button-dark-color: #363636;
+$button-dark-active-background-color: #292929;
+$button-primary-background-color: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+$button-warning-background-color: 0 0 0 0.125em rgba(255, 224, 138, 0.25);
+$button-link-background-color: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
+$button-info-background-color: 0 0 0 0.125em rgba(62, 142, 208, 0.25);
+$button-success-background-color: 0 0 0 0.125em rgba(72, 199, 142, 0.25);
+$button-danger-background-color: 0 0 0 0.125em rgba(241, 70, 104, 0.25);
+
+.button {
+  background-color: $button-background-color;
+  border-color: $button-border-color;
+  border-width: $button-border-width;
+  font-family: $app-font-family;
+  color: $button-color;
+  cursor: pointer;
+  justify-content: center;
+  padding: $button-padding-vertical $button-padding-horizontal;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: $weight-normal;
+  transition: 0.3s ease all;
+  line-height: auto;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+  strong {
+    color: inherit;
+  }
+
+  .icon,
+  .icon.is-large,
+  .icon.is-medium,
+  .icon.is-small {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  .icon:first-child:not(:last-child) {
+    margin-left: calc(-0.5em - 1px);
+    margin-right: 0.25em;
+  }
+  &.no-text {
+    .icon:first-child:not(:last-child) {
+      margin: 0 !important;
+    }
+  }
+  .icon:last-child:not(:first-child) {
+    margin-left: 0.25em;
+    margin-right: calc(-0.5em - 1px);
+  }
+
+  .icon:first-child:last-child {
+    margin-left: calc(-0.5em - 1px);
+    margin-right: calc(-0.5em - 1px);
+  }
+
+  span {
+    letter-spacing: -0.2px;
+    font-weight: 600;
+  }
+}
+
+.button.is-hovered,
+.button:hover {
+  border-color: $button-hover-border-color;
+  color: $button-hover-color;
+  box-shadow: 0 2px 4px $grey-lighter;
+}
+
+.button.is-focused,
+.button:focus {
+  border-color: $button-focus-border-color;
+  color: $button-focus-color;
+}
+
+.button.is-active,
+.button:active {
+  border-color: $button-active-border-color;
+  color: $button-active-color;
+}
+
+.button.is-text {
+  background-color: $transparent;
+  border-color: $transparent;
+  color: $button-text-color;
+  text-decoration: $button-text-decoration;
+}
+
+.button.is-text.is-focused,
+.button.is-text.is-hovered,
+.button.is-text:focus,
+.button.is-text:hover {
+  background-color: $button-text-focused-hovered-background-color;
+  color: $button-text-color;
+}
+
+.button.is-text.is-active,
+.button.is-text:active {
+  background-color: $button-text-active-background-color;
+  color: $button-text-color;
+}
+
+.button.is-text[disabled],
+fieldset[disabled] .button.is-text {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-ghost {
+  background: 0 0;
+  border-color: $transparent;
+  color: $link;
+  text-decoration: none;
+}
+
+.button.is-ghost.is-hovered,
+.button.is-ghost:hover {
+  color: $link;
+  text-decoration: underline;
+}
+
+.button.is-white {
+  background-color: $white;
+  border-color: $transparent;
+  color: $button-white-color;
+}
+
+.button.is-white.is-hovered,
+.button.is-white:hover {
+  background-color: $button-white-hover-background-color;
+  border-color: $transparent;
+  color: $button-white-color;
+}
+
+.button.is-white.is-focused,
+.button.is-white:focus {
+  border-color: $transparent;
+  color: $button-white-color;
+}
+
+.button.is-white.is-focused:not(:active),
+.button.is-white:focus:not(:active) {
+  box-shadow: $button-white-focused-shadow;
+}
+
+.button.is-white.is-active,
+.button.is-white:active {
+  background-color: $button-white-active-shadow;
+  border-color: $transparent;
+  color: $button-white-color;
+}
+
+.button.is-white[disabled],
+fieldset[disabled] .button.is-white {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-white.is-inverted {
+  background-color: $button-white-background-color;
+  color: $white;
+}
+
+.button.is-white.is-inverted.is-hovered,
+.button.is-white.is-inverted:hover {
+  background-color: $black;
+}
+
+.button.is-white.is-inverted[disabled],
+fieldset[disabled] .button.is-white.is-inverted {
+  background-color: $button-white-background-color;
+  border-color: $transparent;
+  box-shadow: none;
+  color: $white;
+}
+
+.button.is-white.is-loading::after {
+  border-color: $transparent $transparent $button-white-border-color
+    $button-white-border-color !important;
+}
+
+.button.is-white.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-white.is-outlined.is-focused,
+.button.is-white.is-outlined.is-hovered,
+.button.is-white.is-outlined:focus,
+.button.is-white.is-outlined:hover {
+  background-color: $white;
+  border-color: $white;
+  color: $button-white-color;
+}
+
+.button.is-white.is-outlined.is-loading::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-white.is-outlined.is-loading.is-focused::after,
+.button.is-white.is-outlined.is-loading.is-hovered::after,
+.button.is-white.is-outlined.is-loading:focus::after,
+.button.is-white.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $button-white-color
+    $button-white-color !important;
+}
+
+.button.is-white.is-outlined[disabled],
+fieldset[disabled] .button.is-white.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  box-shadow: none;
+  color: $white;
+}
+
+.button.is-white.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $button-white-border-color;
+  color: $button-white-color;
+}
+
+.button.is-white.is-inverted.is-outlined.is-focused,
+.button.is-white.is-inverted.is-outlined.is-hovered,
+.button.is-white.is-inverted.is-outlined:focus,
+.button.is-white.is-inverted.is-outlined:hover {
+  background-color: $button-white-background-color;
+  color: $white;
+}
+
+.button.is-white.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-white.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-white.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-white.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-white.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-white.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $button-white-border-color;
+  box-shadow: none;
+  color: $button-white-color;
+}
+
+.button.is-black {
+  background-color: $button-white-background-color;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-black.is-hovered,
+.button.is-black:hover {
+  background-color: $black;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-black.is-focused,
+.button.is-black:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-black.is-focused:not(:active),
+.button.is-black:focus:not(:active) {
+  box-shadow: $button-black-focus;
+}
+
+.button.is-black.is-active,
+.button.is-black:active {
+  background-color: $black;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-black[disabled],
+fieldset[disabled] .button.is-black {
+  background-color: $black;
+  border-color: $black;
+  box-shadow: none;
+}
+
+.button.is-black.is-inverted {
+  background-color: $white;
+  color: $black;
+}
+
+.button.is-black.is-inverted.is-hovered,
+.button.is-black.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-black.is-inverted[disabled],
+fieldset[disabled] .button.is-black.is-inverted {
+  background-color: $white;
+  border-color: $transparent;
+  box-shadow: none;
+  color: $black;
+}
+
+.button.is-black.is-loading::after {
+  border-color: $black $transparent $white $white !important;
+}
+
+.button.is-black.is-outlined {
+  background-color: $transparent;
+  border-color: $black;
+  color: $black;
+}
+
+.button.is-black.is-outlined.is-focused,
+.button.is-black.is-outlined.is-hovered,
+.button.is-black.is-outlined:focus,
+.button.is-black.is-outlined:hover {
+  background-color: $black;
+  border-color: $black;
+  color: $white;
+}
+
+.button.is-black.is-outlined.is-loading::after {
+  border-color: $transparent $transparent $black $black !important;
+}
+
+.button.is-black.is-outlined.is-loading.is-focused::after,
+.button.is-black.is-outlined.is-loading.is-hovered::after,
+.button.is-black.is-outlined.is-loading:focus::after,
+.button.is-black.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-black.is-outlined[disabled],
+fieldset[disabled] .button.is-black.is-outlined {
+  background-color: $transparent;
+  border-color: $black;
+  box-shadow: none;
+  color: $black;
+}
+
+.button.is-black.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-black.is-inverted.is-outlined.is-focused,
+.button.is-black.is-inverted.is-outlined.is-hovered,
+.button.is-black.is-inverted.is-outlined:focus,
+.button.is-black.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $black;
+}
+
+.button.is-black.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-black.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-black.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-black.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $black $black !important;
+}
+
+.button.is-black.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-black.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  box-shadow: none;
+  color: $white;
+}
+
+.button.is-light {
+  background-color: $white-ter;
+  border-color: $transparent;
+  color: $button-light-color;
+}
+
+.button.is-light.is-hovered,
+.button.is-light:hover {
+  background-color: #eee;
+  border-color: $transparent;
+  color: $button-light-color;
+}
+
+.button.is-light.is-focused,
+.button.is-light:focus {
+  border-color: $transparent;
+  color: $button-light-color;
+}
+
+.button.is-light.is-focused:not(:active),
+.button.is-light:focus:not(:active) {
+  box-shadow: $button-light-focused-shadow;
+}
+
+.button.is-light.is-active,
+.button.is-light:active {
+  background-color: $button-light-active-background-color;
+  border-color: $transparent;
+  color: $button-light-color;
+}
+
+.button.is-light[disabled],
+fieldset[disabled] .button.is-light {
+  background-color: $button-light-disabled-background-color;
+  border-color: $button-light-disabled-border-color;
+  box-shadow: none;
+}
+
+.button.is-light.is-inverted {
+  background-color: $button-light-background-color;
+  color: $button-light-disabled-color;
+}
+
+.button.is-light.is-inverted.is-hovered,
+.button.is-light.is-inverted:hover {
+  background-color: $button-light-background-color;
+}
+
+.button.is-light.is-inverted[disabled],
+fieldset[disabled] .button.is-light.is-inverted {
+  background-color: $button-light-background-color;
+  border-color: $transparent;
+  box-shadow: none;
+  color: $button-light-disabled-color;
+}
+
+.button.is-light.is-loading::after {
+  border-color: $transparent $transparent $button-light-border-color
+    $button-light-border-color !important;
+}
+
+.button.is-light.is-outlined {
+  background-color: $transparent;
+  border-color: $button-light-disabled-border-color;
+  color: $button-light-disabled-color;
+}
+
+.button.is-light.is-outlined.is-focused,
+.button.is-light.is-outlined.is-hovered,
+.button.is-light.is-outlined:focus,
+.button.is-light.is-outlined:hover {
+  background-color: $button-light-disabled-background-color;
+  border-color: $button-light-disabled-border-color;
+  color: $button-light-color;
+}
+
+.button.is-light.is-outlined.is-loading::after {
+  border-color: $transparent $transparent $button-light-disabled-border-color
+    $button-light-disabled-border-color !important;
+}
+
+.button.is-light.is-outlined.is-loading.is-focused::after,
+.button.is-light.is-outlined.is-loading.is-hovered::after,
+.button.is-light.is-outlined.is-loading:focus::after,
+.button.is-light.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $button-light-border-color
+    $button-light-border-color !important;
+}
+
+.button.is-light.is-outlined[disabled],
+fieldset[disabled] .button.is-light.is-outlined {
+  background-color: $transparent;
+  border-color: $button-light-disabled-border-color;
+  box-shadow: none;
+  color: $button-light-disabled-color;
+}
+
+.button.is-light.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $button-light-border-color;
+  color: $button-light-color;
+}
+
+.button.is-light.is-inverted.is-outlined.is-focused,
+.button.is-light.is-inverted.is-outlined.is-hovered,
+.button.is-light.is-inverted.is-outlined:focus,
+.button.is-light.is-inverted.is-outlined:hover {
+  background-color: $button-light-background-color;
+  color: $button-light-disabled-color;
+}
+
+.button.is-light.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-light.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-light.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-light.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $button-light-disabled-border-color
+    $button-light-disabled-border-color !important;
+}
+
+.button.is-light.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-light.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $button-light-border-color;
+  box-shadow: none;
+  color: $button-light-border-color;
+}
+
+.button.is-dark {
+  background-color: $button-dark-background-color;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-dark.is-hovered,
+.button.is-dark:hover {
+  background-color: #2f2f2f;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-dark.is-focused,
+.button.is-dark:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-dark.is-focused:not(:active),
+.button.is-dark:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25);
+}
+
+.button.is-dark.is-active,
+.button.is-dark:active {
+  background-color: $button-dark-active-background-color;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-dark[disabled],
+fieldset[disabled] .button.is-dark {
+  background-color: $button-dark-background-color;
+  border-color: $button-dark-border-color;
+  box-shadow: none;
+}
+
+.button.is-dark.is-inverted {
+  background-color: $white;
+  color: $button-dark-color;
+}
+
+.button.is-dark.is-inverted.is-hovered,
+.button.is-dark.is-inverted:hover {
+  background-color: $white-bis;
+}
+
+.button.is-dark.is-inverted[disabled],
+fieldset[disabled] .button.is-dark.is-inverted {
+  background-color: $white;
+  border-color: $transparent;
+  box-shadow: none;
+  color: $button-dark-color;
+}
+
+.button.is-dark.is-loading::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-dark.is-outlined {
+  background-color: $transparent;
+  border-color: $button-dark-border-color;
+  color: $button-dark-color;
+}
+
+.button.is-dark.is-outlined.is-focused,
+.button.is-dark.is-outlined.is-hovered,
+.button.is-dark.is-outlined:focus,
+.button.is-dark.is-outlined:hover {
+  background-color: $button-dark-background-color;
+  border-color: $button-dark-border-color;
+  color: $white;
+}
+
+.button.is-dark.is-outlined.is-loading::after {
+  border-color: $transparent $transparent $button-dark-color $button-dark-color !important;
+}
+
+.button.is-dark.is-outlined.is-loading.is-focused::after,
+.button.is-dark.is-outlined.is-loading.is-hovered::after,
+.button.is-dark.is-outlined.is-loading:focus::after,
+.button.is-dark.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-dark.is-outlined[disabled],
+fieldset[disabled] .button.is-dark.is-outlined {
+  background-color: $transparent;
+  border-color: $button-dark-border-color;
+  box-shadow: none;
+  color: $button-dark-color;
+}
+
+.button.is-dark.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-dark.is-inverted.is-outlined.is-focused,
+.button.is-dark.is-inverted.is-outlined.is-hovered,
+.button.is-dark.is-inverted.is-outlined:focus,
+.button.is-dark.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $button-dark-color;
+}
+
+.button.is-dark.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-dark.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-dark.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-dark.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $button-dark-color $button-dark-color !important;
+}
+
+.button.is-dark.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-dark.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  box-shadow: none;
+  color: $white;
+}
+
+.button.is-primary {
+  background-color: $primary;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-primary.is-hovered,
+.button.is-primary:hover {
+  background-color: $primary-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-primary.is-focused,
+.button.is-primary:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-primary.is-focused:not(:active),
+.button.is-primary:focus:not(:active) {
+  box-shadow: $button-primary-background-color;
+}
+
+.button.is-primary.is-active,
+.button.is-primary:active {
+  background-color: $primary-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-primary[disabled],
+fieldset[disabled] .button.is-primary {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.button.is-primary.is-inverted {
+  background-color: $white;
+  color: $primary;
+}
+
+.button.is-primary.is-inverted.is-hovered,
+.button.is-primary.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-primary.is-inverted[disabled],
+fieldset[disabled] .button.is-primary.is-inverted {
+  box-shadow: none;
+
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+}
+
+.button.is-primary.is-loading::after {
+  border-color: $white $transparent $white $white !important;
+}
+
+.button.is-primary.is-outlined {
+  background-color: $transparent;
+  border-color: $primary;
+  color: $primary;
+}
+
+.button.is-primary.is-outlined.is-focused,
+.button.is-primary.is-outlined.is-hovered,
+.button.is-primary.is-outlined:focus,
+.button.is-primary.is-outlined:hover {
+  background-color: $primary;
+  border-color: $primary;
+  color: $white;
+}
+
+.button.is-primary.is-outlined.is-loading::after {
+  border-color: $white $transparent $primary $primary !important;
+}
+
+.button.is-primary.is-outlined.is-loading.is-focused::after,
+.button.is-primary.is-outlined.is-loading.is-hovered::after,
+.button.is-primary.is-outlined.is-loading:focus::after,
+.button.is-primary.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-primary.is-outlined[disabled],
+fieldset[disabled] .button.is-primary.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-primary.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-primary.is-inverted.is-outlined.is-focused,
+.button.is-primary.is-inverted.is-outlined.is-hovered,
+.button.is-primary.is-inverted.is-outlined:focus,
+.button.is-primary.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $primary;
+}
+
+.button.is-primary.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-primary.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-primary.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-primary.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $primary $primary !important;
+}
+
+.button.is-primary.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-primary.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-primary.is-light {
+  background-color: $primary-light-ter;
+  color: $primary;
+}
+
+.button.is-primary.is-light.is-hovered,
+.button.is-primary.is-light:hover {
+  background-color: $primary-light-bis;
+  border-color: $transparent;
+  color: $primary;
+}
+
+.button.is-primary.is-light.is-active,
+.button.is-primary.is-light:active {
+  background-color: $primary-light-ter;
+  border-color: $transparent;
+  color: $primary;
+}
+
+.button.is-link {
+  background-color: $link;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-link.is-hovered,
+.button.is-link:hover {
+  background-color: $link-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-link.is-focused,
+.button.is-link:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-link.is-focused:not(:active),
+.button.is-link:focus:not(:active) {
+  box-shadow: $button-link-background-color;
+}
+
+.button.is-link.is-active,
+.button.is-link:active {
+  background-color: $link-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-link[disabled],
+fieldset[disabled] .button.is-link {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-link.is-inverted {
+  background-color: $white;
+  color: $link;
+}
+
+.button.is-link.is-inverted.is-hovered,
+.button.is-link.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-link.is-inverted[disabled],
+fieldset[disabled] .button.is-link.is-inverted {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-link.is-loading::after {
+  border-color: $link $transparent $white $white !important;
+}
+
+.button.is-link.is-outlined {
+  background-color: $transparent;
+  border-color: $link;
+  color: $link;
+}
+
+.button.is-link.is-outlined.is-focused,
+.button.is-link.is-outlined.is-hovered,
+.button.is-link.is-outlined:focus,
+.button.is-link.is-outlined:hover {
+  background-color: $link;
+  border-color: $link;
+  color: $white;
+}
+
+.button.is-link.is-outlined.is-loading::after {
+  border-color: $link $transparent $link $link !important;
+}
+
+.button.is-link.is-outlined.is-loading.is-focused::after,
+.button.is-link.is-outlined.is-loading.is-hovered::after,
+.button.is-link.is-outlined.is-loading:focus::after,
+.button.is-link.is-outlined.is-loading:hover::after {
+  border-color: $link $transparent $white $white !important;
+}
+
+.button.is-link.is-outlined[disabled],
+fieldset[disabled] .button.is-link.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-link.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-link.is-inverted.is-outlined.is-focused,
+.button.is-link.is-inverted.is-outlined.is-hovered,
+.button.is-link.is-inverted.is-outlined:focus,
+.button.is-link.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $link;
+}
+
+.button.is-link.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-link.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-link.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-link.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $link $link !important;
+}
+
+.button.is-link.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-link.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-link.is-light {
+  background-color: $link-light;
+  color: $link;
+}
+
+.button.is-link.is-light.is-hovered,
+.button.is-link.is-light:hover {
+  background-color: $link-light-bis;
+  border-color: $transparent;
+  color: $link;
+}
+
+.button.is-link.is-light.is-active,
+.button.is-link.is-light:active {
+  background-color: $link-light-ter;
+  border-color: $transparent;
+  color: $link;
+}
+.button.is-info {
+  background-color: $info;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-info.is-hovered,
+.button.is-info:hover {
+  background-color: $info-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-info.is-focused,
+.button.is-info:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-info.is-focused:not(:active),
+.button.is-info:focus:not(:active) {
+  box-shadow: $button-info-background-color;
+}
+
+.button.is-info.is-active,
+.button.is-info:active {
+  background-color: $info-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-info[disabled],
+fieldset[disabled] .button.is-info {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-info.is-inverted {
+  background-color: $white;
+  color: $info;
+}
+
+.button.is-info.is-inverted.is-hovered,
+.button.is-info.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-info.is-inverted[disabled],
+fieldset[disabled] .button.is-info.is-inverted {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-info.is-loading::after {
+  border-color: $info $transparent $white $white !important;
+}
+
+.button.is-info.is-outlined {
+  background-color: $transparent;
+  border-color: $info;
+  color: $info;
+}
+
+.button.is-info.is-outlined.is-focused,
+.button.is-info.is-outlined.is-hovered,
+.button.is-info.is-outlined:focus,
+.button.is-info.is-outlined:hover {
+  background-color: $info;
+  border-color: $info;
+  color: $white;
+}
+
+.button.is-info.is-outlined.is-loading::after {
+  border-color: $info $transparent $info $info !important;
+}
+
+.button.is-info.is-outlined.is-loading.is-focused::after,
+.button.is-info.is-outlined.is-loading.is-hovered::after,
+.button.is-info.is-outlined.is-loading:focus::after,
+.button.is-info.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-info.is-outlined[disabled],
+fieldset[disabled] .button.is-info.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-info.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-info.is-inverted.is-outlined.is-focused,
+.button.is-info.is-inverted.is-outlined.is-hovered,
+.button.is-info.is-inverted.is-outlined:focus,
+.button.is-info.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $info;
+}
+
+.button.is-info.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-info.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-info.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-info.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $info $info !important;
+}
+
+.button.is-info.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-info.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-info.is-light {
+  background-color: $info-light;
+  color: $info;
+}
+
+.button.is-info.is-light.is-hovered,
+.button.is-info.is-light:hover {
+  background-color: $info-light-bis;
+  border-color: $transparent;
+  color: $info;
+}
+
+.button.is-info.is-light.is-active,
+.button.is-info.is-light:active {
+  background-color: $info-light-ter;
+  border-color: $transparent;
+  color: $info;
+}
+
+.button.is-success {
+  background-color: $success;
+  border-color: $transparent;
+  color: $success-light;
+}
+
+.button.is-success.is-hovered,
+.button.is-success:hover {
+  background-color: $success-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-success.is-focused,
+.button.is-success:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-success.is-focused:not(:active),
+.button.is-success:focus:not(:active) {
+  box-shadow: $button-success-background-color;
+}
+
+.button.is-success.is-active,
+.button.is-success:active {
+  background-color: $success-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-success[disabled],
+fieldset[disabled] .button.is-success {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-success.is-inverted {
+  background-color: $white;
+  color: $success;
+}
+
+.button.is-success.is-inverted.is-hovered,
+.button.is-success.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-success.is-inverted[disabled],
+fieldset[disabled] .button.is-success.is-inverted {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-success.is-loading::after {
+  border-color: $success $transparent $white $white !important;
+}
+
+.button.is-success.is-outlined {
+  background-color: $transparent;
+  border-color: $success;
+  color: $success;
+}
+
+.button.is-success.is-outlined.is-focused,
+.button.is-success.is-outlined.is-hovered,
+.button.is-success.is-outlined:focus,
+.button.is-success.is-outlined:hover {
+  background-color: $success;
+  border-color: $success;
+  color: $white;
+}
+
+.button.is-success.is-outlined.is-loading::after {
+  border-color: $success $transparent $success $success !important;
+}
+
+.button.is-success.is-outlined.is-loading.is-focused::after,
+.button.is-success.is-outlined.is-loading.is-hovered::after,
+.button.is-success.is-outlined.is-loading:focus::after,
+.button.is-success.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-success.is-outlined[disabled],
+fieldset[disabled] .button.is-success.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-success.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-success.is-inverted.is-outlined.is-focused,
+.button.is-success.is-inverted.is-outlined.is-hovered,
+.button.is-success.is-inverted.is-outlined:focus,
+.button.is-success.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $success;
+}
+
+.button.is-success.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-success.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-success.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-success.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $success $success !important;
+}
+
+.button.is-success.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-success.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-success.is-light {
+  background-color: $success-light;
+  color: $success;
+}
+
+.button.is-success.is-light.is-hovered,
+.button.is-success.is-light:hover {
+  background-color: $success-light-bis;
+  border-color: $transparent;
+  color: $success;
+}
+
+.button.is-success.is-light.is-active,
+.button.is-success.is-light:active {
+  background-color: $success-light-ter;
+  border-color: $transparent;
+  color: $success;
+}
+
+.button.is-warning {
+  background-color: $warning;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-warning.is-hovered,
+.button.is-warning:hover {
+  background-color: $warning-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-warning.is-focused,
+.button.is-warning:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-warning.is-focused:not(:active),
+.button.is-warning:focus:not(:active) {
+  box-shadow: $button-warning-background-color;
+}
+
+.button.is-warning.is-active,
+.button.is-warning:active {
+  background-color: $warning-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-warning[disabled],
+fieldset[disabled] .button.is-warning {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-warning.is-inverted {
+  background-color: $white;
+  color: $warning;
+}
+
+.button.is-warning.is-inverted.is-hovered,
+.button.is-warning.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-warning.is-inverted[disabled],
+fieldset[disabled] .button.is-warning.is-inverted {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-warning.is-loading::after {
+  border-color: $warning $transparent $white $white !important;
+}
+
+.button.is-warning.is-outlined {
+  background-color: $transparent;
+  border-color: $warning;
+  color: $warning;
+}
+
+.button.is-warning.is-outlined.is-focused,
+.button.is-warning.is-outlined.is-hovered,
+.button.is-warning.is-outlined:focus,
+.button.is-warning.is-outlined:hover {
+  background-color: $warning;
+  border-color: $warning;
+  color: $white;
+}
+
+.button.is-warning.is-outlined.is-loading::after {
+  border-color: $warning $transparent $warning $warning !important;
+}
+
+.button.is-warning.is-outlined.is-loading.is-focused::after,
+.button.is-warning.is-outlined.is-loading.is-hovered::after,
+.button.is-warning.is-outlined.is-loading:focus::after,
+.button.is-warning.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-warning.is-outlined[disabled],
+fieldset[disabled] .button.is-warning.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-warning.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-warning.is-inverted.is-outlined.is-focused,
+.button.is-warning.is-inverted.is-outlined.is-hovered,
+.button.is-warning.is-inverted.is-outlined:focus,
+.button.is-warning.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $warning;
+}
+
+.button.is-warning.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-warning.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-warning.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-warning.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $warning $warning !important;
+}
+
+.button.is-warning.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-warning.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-warning.is-light {
+  background-color: $warning-light;
+  color: $warning;
+}
+
+.button.is-warning.is-light.is-hovered,
+.button.is-warning.is-light:hover {
+  background-color: $warning-light-bis;
+  border-color: $transparent;
+  color: $warning;
+}
+
+.button.is-warning.is-light.is-active,
+.button.is-warning.is-light:active {
+  background-color: $warning-light-ter;
+  border-color: $transparent;
+  color: $warning;
+}
+.button.is-danger {
+  background-color: $danger;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-danger.is-hovered,
+.button.is-danger:hover {
+  background-color: $danger-dark;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-danger.is-focused,
+.button.is-danger:focus {
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-danger.is-focused:not(:active),
+.button.is-danger:focus:not(:active) {
+  box-shadow: $button-danger-background-color;
+}
+
+.button.is-danger.is-active,
+.button.is-danger:active {
+  background-color: $danger-dark-bis;
+  border-color: $transparent;
+  color: $white;
+}
+
+.button.is-danger[disabled],
+fieldset[disabled] .button.is-danger {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-danger.is-inverted {
+  background-color: $white;
+  color: $danger;
+}
+
+.button.is-danger.is-inverted.is-hovered,
+.button.is-danger.is-inverted:hover {
+  background-color: $white-ter;
+}
+
+.button.is-danger.is-inverted[disabled],
+fieldset[disabled] .button.is-danger.is-inverted {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-danger.is-loading::after {
+  border-color: $danger $transparent $white $white !important;
+}
+
+.button.is-danger.is-outlined {
+  background-color: $transparent;
+  border-color: $danger;
+  color: $danger;
+}
+
+.button.is-danger.is-outlined.is-focused,
+.button.is-danger.is-outlined.is-hovered,
+.button.is-danger.is-outlined:focus,
+.button.is-danger.is-outlined:hover {
+  background-color: $danger;
+  border-color: $danger;
+  color: $white;
+}
+
+.button.is-danger.is-outlined.is-loading::after {
+  border-color: $danger $transparent $danger $danger !important;
+}
+
+.button.is-danger.is-outlined.is-loading.is-focused::after,
+.button.is-danger.is-outlined.is-loading.is-hovered::after,
+.button.is-danger.is-outlined.is-loading:focus::after,
+.button.is-danger.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $white $white !important;
+}
+
+.button.is-danger.is-outlined[disabled],
+fieldset[disabled] .button.is-danger.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-danger.is-inverted.is-outlined {
+  background-color: $transparent;
+  border-color: $white;
+  color: $white;
+}
+
+.button.is-danger.is-inverted.is-outlined.is-focused,
+.button.is-danger.is-inverted.is-outlined.is-hovered,
+.button.is-danger.is-inverted.is-outlined:focus,
+.button.is-danger.is-inverted.is-outlined:hover {
+  background-color: $white;
+  color: $danger;
+}
+
+.button.is-danger.is-inverted.is-outlined.is-loading.is-focused::after,
+.button.is-danger.is-inverted.is-outlined.is-loading.is-hovered::after,
+.button.is-danger.is-inverted.is-outlined.is-loading:focus::after,
+.button.is-danger.is-inverted.is-outlined.is-loading:hover::after {
+  border-color: $transparent $transparent $danger $danger !important;
+}
+
+.button.is-danger.is-inverted.is-outlined[disabled],
+fieldset[disabled] .button.is-danger.is-inverted.is-outlined {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-danger.is-light {
+  background-color: $danger-light;
+  color: $danger;
+}
+
+.button.is-danger.is-light.is-hovered,
+.button.is-danger.is-light:hover {
+  background-color: $danger-light-bis;
+  border-color: $transparent;
+  color: $danger;
+}
+
+.button.is-danger.is-light.is-active,
+.button.is-danger.is-light:active {
+  background-color: $danger-light-ter;
+  border-color: $transparent;
+  color: $danger;
+}
+
+.button.is-small {
+  font-size: $size-7;
+}
+
+.button.is-small:not(.is-rounded) {
+  border-radius: 5px;
+}
+
+.button.is-normal {
+  font-size: $size-6;
+}
+
+.button.is-medium {
+  font-size: $size-5;
+}
+
+.button.is-large {
+  font-size: $size-4;
+}
+
+.button[disabled],
+fieldset[disabled] .button {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #989898;
+  box-shadow: none;
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 100%;
+}
+
+.button.is-loading {
+  color: $transparent !important;
+  pointer-events: none;
+}
+
+.button.is-loading::after {
+  position: absolute;
+  left: calc(50% - (1em * 0.5));
+  top: calc(50% - (1em * 0.5));
+  position: absolute !important;
+}
+
+.button.is-static {
+  background-color: $white-bis;
+  border-color: $white-ter;
+  color: $grey;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.button.is-rounded {
+  border-radius: 100px;
+  padding-left: calc(1em + 0.25em);
+  padding-right: calc(1em + 0.25em);
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.buttons .button {
+  margin-bottom: 0.5rem;
+}
+
+.buttons .button:not(:last-child):not(.is-fullwidth) {
+  margin-right: 0.5rem;
+}
+
+.buttons:last-child {
+  margin-bottom: -0.5rem;
+}
+
+.buttons:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
+  font-size: 0.75rem;
+}
+
+.buttons.are-small
+  .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+  border-radius: 5px;
+}
+
+.buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
+  font-size: 1.25rem;
+}
+
+.buttons.are-large .button:not(.is-small):not(.is-normal):not(.is-medium) {
+  font-size: 1.5rem;
+}
+
+.buttons.has-addons .button:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.buttons.has-addons .button:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-right: -1px;
+}
+
+.buttons.has-addons .button:last-child {
+  margin-right: 0;
+}
+
+.buttons.has-addons .button.is-hovered,
+.buttons.has-addons .button:hover {
+  z-index: 2;
+}
+
+.buttons.has-addons .button.is-active,
+.buttons.has-addons .button.is-focused,
+.buttons.has-addons .button.is-selected,
+.buttons.has-addons .button:active,
+.buttons.has-addons .button:focus {
+  z-index: 3;
+}
+
+.buttons.has-addons .button.is-active:hover,
+.buttons.has-addons .button.is-focused:hover,
+.buttons.has-addons .button.is-selected:hover,
+.buttons.has-addons .button:active:hover,
+.buttons.has-addons .button:focus:hover {
+  z-index: 4;
+}
+
+.buttons.has-addons .button.is-expanded {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.buttons.is-centered {
+  justify-content: center;
+}
+
+.buttons.is-centered:not(.has-addons) .button:not(.is-fullwidth) {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.buttons.is-right {
+  justify-content: flex-end;
+}
+
+.buttons.is-right:not(.has-addons) .button:not(.is-fullwidth) {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .button.is-responsive.is-small {
+    font-size: 0.5625rem;
+  }
+  .button.is-responsive,
+  .button.is-responsive.is-normal {
+    font-size: 0.65625rem;
+  }
+  .button.is-responsive.is-medium {
+    font-size: 0.75rem;
+  }
+  .button.is-responsive.is-large {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .button.is-responsive.is-small {
+    font-size: 0.65625rem;
+  }
+  .button.is-responsive,
+  .button.is-responsive.is-normal {
+    font-size: 0.75rem;
+  }
+  .button.is-responsive.is-medium {
+    font-size: 1rem;
+  }
+  .button.is-responsive.is-large {
+    font-size: 1.25rem;
+  }
+}
