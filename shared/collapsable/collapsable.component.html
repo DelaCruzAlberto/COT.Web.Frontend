@@ -1,0 +1,17 @@
+<div class="collapsable">
+  <div class="collapsable-header" (click)="toggleCollapsable()">
+    <div class="collapsable-header-title">
+        {{ title }}
+        <span *ngIf="subtitle" class="collapsable-header-subtitle"> 
+          {{ subtitle }}
+        </span>  
+    </div>
+    <div
+      class="collapsable-header-arrow"
+      [ngClass]="{ collapsed: isCollapsed }"
+    ></div>
+  </div>
+  <div class="collapsable-content" [ngClass]="{ collapsed: isCollapsed }">
+    <ng-content></ng-content>
+  </div>
+</div>

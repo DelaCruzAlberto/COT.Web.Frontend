@@ -1,0 +1,14 @@
+<div class="checkbox-group" [class.horizontal]="horizontal">
+  <label *ngFor="let option of options" class="checkbox-label">
+    <input
+      [disabled]="option.isDisabled"
+      type="checkbox"
+      [value]="option.value"
+      [checked]="selectedValues.includes(option.value)"
+      (change)="onChange($event, option.value)"
+    />
+    <span class="checkbox-input" [ngClass]="{ disabled: option.isDisabled }">{{
+      option.label
+    }}</span>
+  </label>
+</div>

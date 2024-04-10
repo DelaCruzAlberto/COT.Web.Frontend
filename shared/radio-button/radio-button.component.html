@@ -1,0 +1,13 @@
+<div class="radio-group" [class.horizontal]="horizontal">
+  <label *ngFor="let option of options" class="radio-label">
+    <input
+      [disabled]="option.isDisabled"
+      type="radio"
+      name="radioGroup"
+      [value]="option.value"
+      [checked]="option.value === selectedValue"
+      (change)="onChange($event)"
+    />
+    <span [ngClass]="{ disabled: option.isDisabled }">{{ option.label }}</span>
+  </label>
+</div>

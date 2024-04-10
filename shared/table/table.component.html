@@ -1,0 +1,120 @@
+<div class="card table-wrapper">
+  <table [ngClass]="getTableClass()">
+    <thead>
+      <tr>
+        <th *ngIf="hasCheckbox" class="checkbox-header">
+          <input
+            type="checkbox"
+            [(ngModel)]="selectAll"
+            (ngModelChange)="selectAllRows(selectAll)"
+          />
+        </th>
+
+        <th
+          *ngFor="let header of headers"
+          (click)="sort(header)"
+          [ngClass]="{ 'thtd-isHidden': header.hidden }"
+        >
+          <span [ngClass]="header.key">
+            <div class="sort-header" [class.sortable]="header.sortable">
+              {{ header.label }}
+              <i
+                class="fa sort-icon"
+                *ngIf="header.sortable"
+                [ngClass]="sortAscending ? 'fa-arrow-up' : 'fa-arrow-down'"
+              ></i>
+            </div>
+          </span>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of getRows(); let rowIndex = index">
+        <td *ngIf="hasCheckbox" class="checkboxItem">
+          <input
+            type="checkbox"
+            [checked]="selectedRows.includes(rowIndex)"
+            (click)="onRowSelect(rowIndex, $event)"
+            [id]="'checkbox-' + rowIndex"
+          />
+        </td>
+        <td
+          *ngFor="let item of row; let columnIndex = index"
+          [ngClass]="{ 'thtd-isHidden': headers[columnIndex].hidden }"
+        >
+          <span [ngClass]="headers[columnIndex].key" *ngIf="!isArray(item)">
+            <a
+              *ngIf="isLinkHeader(headers[columnIndex]) && item"
+              [href]="headers[columnIndex].href"
+              target="_blank"
+            >
+              {{ item }}
+            </a>
+            <span [ngClass]="item" *ngIf="!isLinkHeader(headers[columnIndex]) || !item">
+              {{ item }}
+            </span>
+          </span>
+          <span [ngClass]="headers[columnIndex].key" *ngIf="isArray(item)">
+            <ng-container *ngFor="let action of item; let i = index">
+              <i
+                [ngClass]="'fas ' + action.icon"
+                [class.disabled]="action.disabled"
+                style="cursor: pointer"
+                (click)="onEditItem(row, i)"
+              ></i>
+            </ng-container>
+          </span>
+        </td>
+      </tr>
+      <tr *ngIf="totalRows === 0">
+        <td [attr.colspan]="headers.length + (hasCheckbox ? 1 : 0)">
+          <div class="no-results">
+            <h3 class="subtitle is-6">La búsqueda no arrojó resultados.</h3>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+
+  <nav
+    class="pagination is-small table-footer"
+    role="navigation"
+    aria-label="pagination"
+    *ngIf="totalRows > 0"
+  >
+    <div class="itemsPerPage">
+      <p>Items por página</p>
+      <div class="select is-small">
+        <select
+          [(ngModel)]="pageSize"
+          (ngModelChange)="onItemsPerPageChange(pageSize)"
+        >
+          <option *ngFor="let option of itemsPerPageOptions">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="table-pagination">
+      {{ (currentPage - 1) * pageSize + 1 }}-{{
+        (currentPage - 1) * pageSize + rows.length
+      }}
+      de {{ totalRows }}
+    </div>
+    <a class="pagination-previous" (click)="goToPage(1)"
+      ><i class="fas fa-angle-double-left"></i
+    ></a>
+    <a class="pagination-previous" (click)="prevPage()"
+      ><i class="fas fa-angle-left"></i
+    ></a>
+
+    <a class="pagination-next" (click)="nextPage()"
+      ><i class="fas fa-angle-right"></i
+    ></a>
+    <a class="pagination-next" (click)="goToPage(totalPages)"
+      ><i class="fas fa-angle-double-right"></i
+    ></a>
+  </nav>
+</div>

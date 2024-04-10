@@ -1,0 +1,14 @@
+<div class="ant-steps ant-steps-horizontal css-1w4v3hc ant-steps-label-horizontal">
+    <div *ngFor="let step of steps; let i = index" [ngClass]="{'ant-steps-item-process': i === currentStep, 'ant-steps-item-active': i === currentStep, 'ant-steps-item-wait': i > currentStep}" class="ant-steps-item">
+      <div class="ant-steps-item-container">
+        <div class="ant-steps-item-tail"></div>
+        <div class="ant-steps-item-icon">
+          <span class="ant-steps-icon">{{ i + 1 }}</span>
+        </div>
+        <div class="ant-steps-item-content">
+          <div class="ant-steps-item-title">{{ step.title }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,23 @@
+<div class="card bar-card">
+  <ng-content></ng-content>
+  <p class="tooltip" *ngIf="showTooltip">{{ tooltipText }}</p>
+
+  <div class="card-content">
+    <div class="bar-chart">
+      <i class="fas fa-circle-arrow-left" (click)="prevPage()"></i>
+      <div class="bars-wrapper">
+        <div class="bar" *ngFor="let data of data[page]">
+          <div class="bar-label">{{ data.label }}</div>
+          <div
+            *ngFor="let child of data.children"
+            class="bar-progress"
+            [style.backgroundColor]="child.color"
+            [style.height.%]="calculatePercentage(child.value)"
+            (mouseenter)="toggleTooltip(child)"
+            (mouseleave)="toggleTooltip(child)"
+          ></div>
+        </div>
+      </div>
+      <i class="fas fa-circle-arrow-right" (click)="nextPage()"></i>
+    </div>
+</div>

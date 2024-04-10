@@ -1,0 +1,245 @@
+@import "../abstracts/variables";
+
+.select {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+}
+.select:not(.is-multiple) {
+  height: 2.5em;
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: $primary;
+  transition: .3s ease all;
+  right: 1.125em;
+  z-index: 4;
+}
+.select.is-rounded select {
+  border-radius: 9999px;
+  padding-left: 1em;
+}
+.select select {
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  max-width: 100%;
+  outline: 0;
+  border-color: $grey-lighter;
+  font-family: $app-font-family;
+  transition: .3s ease all;
+  &:hover{
+    border-color: $primary !important;
+  }
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select[disabled]:hover,
+fieldset[disabled] .select select:hover {
+  border-color: $primary;
+}
+.select select:not([multiple]) {
+  padding-right: 2.5em;
+}
+.select select[multiple] {
+  height: auto;
+  padding: 0;
+}
+.select select[multiple] option {
+  padding: 0.5em 1em;
+}
+.select:not(.is-multiple):not(.is-loading):hover::after {
+  border-color: $primary;
+}
+.select.is-white:not(:hover)::after {
+  border-color: $primary;
+}
+.select.is-white select {
+  border-color: $primary;
+}
+.select.is-white select.is-hovered,
+.select.is-white select:hover {
+  border-color: #f2f2f2;
+}
+
+.select.is-black:not(:hover)::after {
+  border-color: $black;
+}
+.select.is-black select {
+  border-color: $black;
+}
+.select.is-black select.is-hovered,
+.select.is-black select:hover {
+  border-color: #000;
+}
+.select.is-black select.is-active,
+.select.is-black select.is-focused,
+.select.is-black select:active,
+.select.is-black select:focus {
+  box-shadow: 0 0 0 0.125em rgba(10, 10, 10, 0.25);
+}
+.select.is-light:not(:hover)::after {
+  border-color: $white;
+}
+.select.is-light select {
+  border-color: $white;
+}
+.select.is-light select.is-hovered,
+.select.is-light select:hover {
+  border-color: #e8e8e8;
+}
+.select.is-light select.is-active,
+.select.is-light select.is-focused,
+.select.is-light select:active,
+.select.is-light select:focus {
+  box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25);
+}
+.select.is-dark:not(:hover)::after {
+  border-color: $grey-darker;
+}
+.select.is-dark select {
+  border-color: $grey-darker;
+}
+.select.is-dark select.is-hovered,
+.select.is-dark select:hover {
+  border-color: #292929;
+}
+.select.is-dark select.is-active,
+.select.is-dark select.is-focused,
+.select.is-dark select:active,
+.select.is-dark select:focus {
+  box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25);
+}
+.select.is-primary:not(:hover)::after {
+  border-color: $primary;
+}
+.select.is-primary select {
+  border-color: $primary;
+}
+.select.is-primary select.is-hovered,
+.select.is-primary select:hover {
+  border-color: #00b89c;
+}
+.select.is-primary select.is-active,
+.select.is-primary select.is-focused,
+.select.is-primary select:active,
+.select.is-primary select:focus {
+  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+}
+.select.is-link:not(:hover)::after {
+  border-color: $link;
+}
+.select.is-link select {
+  border-color: $link;
+}
+.select.is-link select.is-hovered,
+.select.is-link select:hover {
+  border-color: #3a51bb;
+}
+.select.is-link select.is-active,
+.select.is-link select.is-focused,
+.select.is-link select:active,
+.select.is-link select:focus {
+  box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
+}
+.select.is-info:not(:hover)::after {
+  border-color: $info;
+}
+.select.is-info select {
+  border-color: $info;
+}
+.select.is-info select.is-hovered,
+.select.is-info select:hover {
+  border-color: #3082c5;
+}
+.select.is-info select.is-active,
+.select.is-info select.is-focused,
+.select.is-info select:active,
+.select.is-info select:focus {
+  box-shadow: 0 0 0 0.125em rgba(62, 142, 208, 0.25);
+}
+.select.is-success:not(:hover)::after {
+  border-color: $success;
+}
+.select.is-success select {
+  border-color: $success;
+}
+.select.is-success select.is-hovered,
+.select.is-success select:hover {
+  border-color: #3abb81;
+}
+.select.is-success select.is-active,
+.select.is-success select.is-focused,
+.select.is-success select:active,
+.select.is-success select:focus {
+  box-shadow: 0 0 0 0.125em rgba(72, 199, 142, 0.25);
+}
+.select.is-warning:not(:hover)::after {
+  border-color: $warning;
+}
+.select.is-warning select {
+  border-color: $warning;
+}
+.select.is-warning select.is-hovered,
+.select.is-warning select:hover {
+  border-color: #ffd970;
+}
+.select.is-warning select.is-active,
+.select.is-warning select.is-focused,
+.select.is-warning select:active,
+.select.is-warning select:focus {
+  box-shadow: 0 0 0 0.125em rgba(255, 224, 138, 0.25);
+}
+.select.is-danger:not(:hover)::after {
+  border-color: $danger;
+}
+.select.is-danger select {
+  border-color: $danger;
+}
+.select.is-danger select.is-hovered,
+.select.is-danger select:hover {
+  border-color: #ef2e55;
+}
+.select.is-danger select.is-active,
+.select.is-danger select.is-focused,
+.select.is-danger select:active,
+.select.is-danger select:focus {
+  box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25);
+}
+.select.is-small {
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+.select.is-medium {
+  font-size: 1.25rem;
+}
+.select.is-large {
+  font-size: 1.5rem;
+}
+.select.is-disabled::after {
+  border-color: #7a7a7a !important;
+  opacity: 0.5;
+}
+.select.is-fullwidth {
+  width: 100%;
+}
+.select.is-fullwidth select {
+  width: 100%;
+}
+.select.is-loading::after {
+  margin-top: 0;
+  position: absolute;
+  right: 0.625em;
+  top: 0.625em;
+  transform: none;
+}
+.select.is-loading.is-small:after {
+  font-size: 0.75rem;
+}
+.select.is-loading.is-medium:after {
+  font-size: 1.25rem;
+}
+.select.is-loading.is-large:after {
+  font-size: 1.5rem;
+}

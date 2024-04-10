@@ -1,0 +1,5 @@
+@import "../abstracts/variables";
+
+.block:not(:last-child) {
+  margin-bottom: $size-4;
+}

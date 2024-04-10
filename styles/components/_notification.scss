@@ -1,0 +1,119 @@
+@import "../abstracts/variables";
+
+.notification {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  min-width: 90%;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ffffff;
+  box-shadow: 0 2px 6px #00000059;
+  .delete{
+    top: 50%;
+     background-color: transparent;
+    transition: 0.3s ease all;
+    transform: translate(0, -50%);
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.139);
+    }
+  }
+  i{
+    position: absolute;
+    left: 10px;
+  }
+  &.top {
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideInFromTop 0.3s forwards;
+  }
+
+  &.top-left {
+    top: 1rem;
+    left: -100%;
+    animation: slideInFromLeft 0.3s forwards;
+  }
+
+  &.top-right {
+    top: 1rem;
+    right: -100%;
+    animation: slideInFromRight 0.3s forwards;
+  }
+
+  &.bottom {
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideInFromBottom 0.3s forwards;
+  }
+
+  &.bottom-left {
+    bottom: 1rem;
+    left: -100%;
+    animation: slideInFromLeft 0.3s forwards;
+  }
+
+  &.bottom-right {
+    bottom: 1rem;
+    right: -100%;
+    animation: slideInFromRight 0.3s forwards;
+  }
+
+  &.success {
+    background-color: $success;
+  }
+
+  &.warning {
+    background-color: $warning;
+  }
+
+  &.danger {
+    background-color: $danger;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      top: 0
+    }
+    to {
+      top: 10px
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 10px
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 10px
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      bottom: -100%;
+    }
+    to {
+      bottom: 10px
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .notification{
+    width: 90%;
+  }
+}

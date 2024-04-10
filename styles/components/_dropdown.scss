@@ -1,0 +1,103 @@
+@import "../abstracts/variables";
+@import "../abstracts/animations";
+
+.dropdown {
+  display: inline-flex;
+  position: relative;
+  vertical-align: top;
+}
+
+.dropdown.is-active .dropdown-menu,
+.dropdown.is-hoverable:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.1s alternate linear;
+}
+.dropdown.is-right .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.dropdown.is-up .dropdown-menu {
+  bottom: 100%;
+  padding-bottom: 4px;
+  padding-top: initial;
+  top: auto;
+}
+.dropdown-menu {
+  display: none;
+  min-width: 10rem;
+  position: absolute;
+  top: 100%;
+  z-index: 20;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.dropdown-content {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+    padding-bottom: 0.2rem;
+    padding-top: 0.1rem;
+}
+.dropdown-item {
+  color: $black-ter;
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 0px 1rem;
+  position: relative;
+}
+a.dropdown-item,
+button.dropdown-item {
+  padding-right: 3rem;
+  text-align: inherit;
+  white-space: nowrap;
+  width: 100%;
+  font-weight: 300;
+  padding: 0.3rem 1rem;
+}
+a.dropdown-item:hover,
+button.dropdown-item:hover {
+  background-color: $white-ter;
+  color: $black;
+}
+a.dropdown-item.is-active,
+button.dropdown-item.is-active {
+  background-color: $primary;
+  color: $white;
+}
+.dropdown-divider {
+  background-color: #ededed;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 0.2rem 0;
+}
+
+.dropdown-trigger {
+  button {
+    border: none;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    font-size: 12px;
+    &:hover,
+    &:focus,
+    &:active {
+      border: none;
+      box-shadow: none;
+      color: initial;
+    }
+  }
+}
+
+.dropdown-icon{
+  margin-top: -4px;
+}
+
+@media screen and (max-width: 900px) {
+  .dropdown {
+    width: 100%;
+
+    .dropdown-trigger {
+      width: 100%;
+    }
+  }
+}

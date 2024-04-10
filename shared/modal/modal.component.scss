@@ -1,0 +1,19 @@
+.modal.is-active {
+  animation: fadeIn 0.3s forwards;
+}
+.modal-background{
+        background: rgba(0,0,0,.32);
+}
+
+.modal-card {
+  background: white;
+  box-shadow: 0px 8px 8px #00000012;
+
+  header {
+    justify-content: center;
+    .subtitle {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}

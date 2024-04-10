@@ -1,0 +1,167 @@
+@import "../abstracts/variables";
+
+
+.message {
+    background-color: $white;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .message strong {
+    color: currentColor;
+  }
+  .message a:not(.button):not(.tag):not(.dropdown-item) {
+    color: currentColor;
+    text-decoration: underline;
+  }
+  .message.is-small {
+    font-size: 0.75rem;
+  }
+  .message.is-medium {
+    font-size: 1.25rem;
+  }
+  .message.is-large {
+    font-size: 1.5rem;
+  }
+  .message.is-white {
+    background-color: $white;
+  }
+  .message.is-white .message-header {
+    background-color: $white;
+    color: $black;
+  }
+  .message.is-white .message-body {
+    border-color: $white;
+  }
+  .message.is-black {
+    background-color: #fafafa;
+  }
+  .message.is-black .message-header {
+    background-color: $black;
+    color: $white;
+  }
+  .message.is-black .message-body {
+    border-color: $black;
+  }
+  .message.is-light {
+    background-color: #fafafa;
+  }
+  .message.is-light .message-header {
+    background-color: $white;
+    color: $black-bis;
+  }
+  .message.is-light .message-body {
+    border-color: $white;
+  }
+  .message.is-dark {
+    background-color: #fafafa;
+  }
+  .message.is-dark .message-header {
+    background-color: $grey-darker;
+    color: $white;
+  }
+  .message.is-dark .message-body {
+    border-color: $grey-darker;
+  }
+  .message.is-primary {
+    background-color: $primary-light;
+  }
+  .message.is-primary .message-header {
+    background-color: $primary;
+    color: $white;
+  }
+  .message.is-primary .message-body {
+    border-color: $primary;
+    color: $primary-dark;
+  }
+  .message.is-link {
+    background-color: $link-light;
+  }
+  .message.is-link .message-header {
+    background-color: $link;
+    color: $white;
+  }
+  .message.is-link .message-body {
+    border-color: $link;
+    color: $link-dark;
+  }
+  .message.is-info {
+    background-color: $info-light;
+  }
+  .message.is-info .message-header {
+    background-color: $info;
+    color: $white;
+  }
+  .message.is-info .message-body {
+    border-color: $info;
+    color: $info-dark;
+  }
+  .message.is-success {
+    background-color: $success-light;
+  }
+  .message.is-success .message-header {
+    background-color: $success;
+    color: $white;
+  }
+  .message.is-success .message-body {
+    border-color: $success;
+    color: $success-dark;
+  }
+  .message.is-warning {
+    background-color: $warning-light;
+  }
+  .message.is-warning .message-header {
+    background-color: $warning;
+    color: $black-bis;
+  }
+  .message.is-warning .message-body {
+    border-color: $warning;
+    color: $warning-dark;
+  }
+  .message.is-danger {
+    background-color: $danger-light;
+  }
+  .message.is-danger .message-header {
+    background-color: $danger;
+    color: $white;
+  }
+  .message.is-danger .message-body {
+    border-color: $danger;
+    color: $danger-dark;
+  }
+  .message-header {
+    align-items: center;
+    background-color: $grey-dark;
+    border-radius: 4px 4px 0 0;
+    color: $white;
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    line-height: 1.25;
+    padding: 0.75em 1em;
+    position: relative;
+  }
+  .message-header .delete {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 0.75em;
+  }
+  .message-header + .message-body {
+    border-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .message-body {
+    border-color: $grey-lighter;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 0 0 0 4px;
+    color: $grey-dark;
+    padding: 1.25em 1.5em;
+  }
+  .message-body code,
+  .message-body pre {
+    background-color: $white;
+  }
+  .message-body pre code {
+    background-color: transparent;
+  }

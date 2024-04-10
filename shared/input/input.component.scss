@@ -1,0 +1,28 @@
+::ng-deep {
+  app-input {
+    display: block;
+
+    .disabled {
+      background-color: #e9ecef;
+      cursor: not-allowed;
+      label {
+        opacity: 0.45;
+      }
+    }
+    span.disabled {
+      background-color: transparent;
+    }
+    .required-asterisk {
+      color: #de0202;
+      font-size: 12px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: left;
+    }
+
+    input.disabled {
+      opacity: 0.45;
+    }
+  }
+}
