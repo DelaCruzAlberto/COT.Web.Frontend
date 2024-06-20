@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <div class="card">
+      <header class="card-header">
+        <img src="assets/edimarket.svg" />
+      </header>
+      <div class="card-content">
+        <div class="actions">
+          <app-input
+            placeholder="Empresa"
+            color="primary"
+            type="text"
+            [isRequired]="true"
+            (valueChange)="handleEnterpriseChange($event)"
+            (keydown.enter)="postLogin()"
+          ></app-input>
+          <app-input
+            placeholder="Usuario"
+            color="primary"
+            type="text"
+            [isRequired]="true"
+            (valueChange)="handleUsernameChange($event)"
+            (keydown.enter)="postLogin()"
+          ></app-input>
+          <app-input
+            placeholder="Contraseña"
+            color="primary"
+            type="password"
+            [isRequired]="true"
+            (valueChange)="handlePasswordChange($event)"
+            (keydown.enter)="postLogin()"
+          ></app-input>
+  
+          <app-button
+            text="acceder"
+            icon="fa-user"
+            color="primary"
+            size="small"
+            (click)="postLogin()"
+            [loading]="isLoading"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
