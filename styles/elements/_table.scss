@@ -278,6 +278,8 @@ nav.is-small.table-footer {
     span {
       width: 100%;
       display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     i {
       padding: 0 0.25rem;
